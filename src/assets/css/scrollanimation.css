@@ -1,0 +1,16 @@
+/*--------------  Animación con clases  --------------*/
+/*Debemos colocar la clase .delay donde queremos que demore en mostrarse la información */
+.before-enter{
+	opacity: 0;
+	transform: translate3d(0, 30%, 0);
+	transition: all 1.5s ease-out;
+}
+
+.enter{
+	opacity: 1;
+	transform: none;
+}
+
+.delay{
+	transition-delay: 0.4s;
+}
