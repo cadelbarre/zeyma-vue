@@ -1,26 +1,32 @@
 <template>
 	<header>
-		<div class="content px-2 py-3 has-background-info has-text-white">
+		<div class="content px-2 py-3 background-primary has-text-white">
 			<!-- Top header info empresa -->
 			<div class="container">
 				<div class="columns is-centered">
-					<div class="column is-offset-4 has-text-right">
-						<span class="is-size-9">Carrera 7F N 44 - 52 Barrio la alboraya, Barranquilla - Colombia.</span>
-						<span class="is-size-9">(5) 363 2058 - (5) 362 8780</span>
-						<span class="is-size-9"> <a href="mailto:facturacion@zeyma.co">Facturacion@zeyma.co</a></span>
+					<div class="column is-offset-2 has-text-right">
+						<span class="is-size-9"><b-icon
+							pack="fas"
+							icon="map-marker-alt">
+						</b-icon>{{json.direccion}}</span>
+						<span class="is-size-9 ml-5"><b-icon
+							pack="fas"
+							icon="phone">
+						</b-icon>{{json.telefono}}</span>
+						<span class="is-size-9 ml-5"><b-icon
+							pack="fas"
+							icon="envelope">
+						</b-icon> <a href="mailto:facturacion@zeyma.co">{{json.correo1}}</a></span>
 					</div>
 				</div>
 			</div>		
 		</div>
-		<!-- Navbar -->
+		<!-- Navbar (5) 363 2058 - (5) 362 8780-->
 		<div class="container is-centered py-2">
 			<b-navbar>
 				<template slot="brand">
 					<b-navbar-item tag="router-link" :to="{ path: '/' }">
-						<img
-						src="../assets/img/zeyma-Original-mod.png"
-						alt="Lightweight UI components for Vue.js based on Bulma"
-						>
+						<img src="../assets/img/zeyma-Original-mod.png">
 					</b-navbar-item>
 				</template>
 				<template slot="end">
@@ -84,8 +90,15 @@
 </template>
 
 <script>
+import json from '@/assets/data/data-general.json';
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  data(){
+        return {
+        	json
+        }
+    }
 }
 </script>
 

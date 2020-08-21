@@ -15,6 +15,7 @@ Vue.use(Buefy)
 
 /*--------------  Importamos AOS - Animation on Scroll  --------------*/
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 AOS.init();
 
 new Vue({

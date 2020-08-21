@@ -1,18 +1,30 @@
 {
-	"direccion": "Carrera 49C 80 - 125, Consultorio 506. Barranquilla - Colombia.",
-	"correo1": "unesi2007@hotmail.com",
-	"correo2": "",
-	"telefono": "(57 5) 391 26 75",
-	"celular": "(57) 315 261 86 95",
+	"direccion": "Carrera 7F # 44 - 52, Barrio la alboraya. Barranquilla - Colombia.",
+	"correo1": "facturacion@zeyma.co",
+	"correo2": "czeyma@hotmail.com",
+	"telefono": "+57 (5) 363 2058, +57 (5) 362 8780",
+	"celular": "+57 317 3644 6328 - +57 318 343 7699",
+	"whatsapp":"+57 302 428 7831 - +57 318 343 7699",
 	"facebook": "",
 	"instagram": "",
-	"horario_corto": "Lun - Vie: 9:00 AM - 5:00 PM",
+	"horario_corto": "Lun - Vie: 7:30 AM a 12:00 M - 2:00 PM a 6:00 PM",
 	"horario_largo":"",
-	"contador":{
-		"pacientes":"10500",
-		"anios":"20",
-		"procedimientos":"276",
-		"cursos":"96"
-	},
-	"otra cosa":""
+	"counter": [
+		{ "name": "Clientes", "count": 800 },
+		{ "name": "Años de Experiencia", "count": 22 },
+		{ "name": "Productos Codificados", "count": 3500 },
+		{ "name": "Número de Proveedores", "count": 83 }
+	],
+	"services":[
+		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fcommon_stock.jpg?alt=media&token=e656ce46-558d-4cfb-a55b-c8f756465137", "title":"Asesoramiento", "text":"Ofrecemos asesoramiento a nuestros clientes en nuevos proyectos y mejoramiento de proyectos actuales."},
+		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fplataforma-clientes.png?alt=media&token=c2c20998-222d-46e9-94a0-ea8c08cfeba8", "title":"Plataforma Web", "text":"Realiza tus pedidos de manera rapida, facil e intuitiva a través de nuestra plataforma web."},
+		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fnegociacion.jpg?alt=media&token=2b2bb2cd-ada7-4e5a-8c5d-746fc0ff531b", "title":"Ferias Comerciales", "text":"Anualmente realizamos la feria comercial para nuestros clientes, donde obtendrán, DESCUENTOS, OFERTAS y mucho mas. "},
+		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fteleferia.jpg?alt=media&token=bac30c3f-f7a2-4599-b4ee-4c3925249717", "title":"Teleferias Comerciales", "text":"A través de nuestros proveedores realizamos teleferias ofreciendo descuentos adicionales, bonificaciones, entre otras."}
+
+	],
+	"testimonios":[
+		{"text":"Es una distribuidora de drogas excelente donde te brindan facilidad para abastecer tu negocio con productos que tienen buenas practicas de manufacturas.", "name":"Alex Baldovino", "company":"DROGUERIA DROGUIFARMA JUNIOR", "imagen":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/testimonios%2Fdroguifarma_avatar.png?alt=media&token=b80621f9-25b3-4724-b615-e99d1b9b2612"},
+		{"text":"Cuando se necesita algún producto urgente, se solicita por telefono y cuando te das cuenta ya lo tienes disponible en la droguerias, es decir es un servicio rapido y eficaz.", "name":"Federico Martinez", "company":"DROGUERIA BUENOS AIRES", "imagen":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/testimonios%2Fbuenos_aires_avatar.png?alt=media&token=b8bb342a-965c-4791-83c4-7d5b1398073d"},
+		{"text":"Confio siempre en la seriedad y cumplimiento de COMERCIALIZADORA ZEYMA S.A.S. en el despacho de sus mercancias, así mi clientes cuenta con sus medicamentos a tiempo.", "name":"Ricardo Tapia", "company":"DROGUERIA TAPIA", "imagen":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/testimonios%2Favatar2.png?alt=media&token=d430d197-20cf-4c80-8b4f-85d1f3615d2b"}
+	]
 }

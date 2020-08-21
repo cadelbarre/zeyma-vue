@@ -7,8 +7,8 @@
   height: 100%;
   position: absolute;
   top: 0;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   width: 80px;
 }
 .agile__nav-button:hover {
@@ -42,21 +42,21 @@
   line-height: 0;
   margin: 0;
   padding: 0;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   width: 10px;
 }
 .agile__dot--current button, .agile__dot:hover button {
   background-color: #999;
 }
 
-/*.slide {
+.slide {
   display: block;
-  height: 650px;
+  height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-}*/
+}
 
 #testigos.slide {
   display: block;
