@@ -8,7 +8,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
   },
   {
     path: '/about',
@@ -17,7 +17,27 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/talentohumano',
+    name: 'Talento',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Talentohumano.vue')
+  },
+  {
+    path: '/politicasdevolucion',
+    name: 'Devolucion',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Devolucion.vue')
+  },
+  {
+    path: '/escribenos',
+    name: 'Contacto',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Contacto.vue')
+  },
+  {
+    path: '/directorio',
+    name: 'Directorio',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Directorio.vue')
+  },
 ]
 
 const router = new VueRouter({

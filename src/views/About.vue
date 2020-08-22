@@ -53,6 +53,27 @@
         </div>
       </div>
     </div>
+
+    <!-- Politicas de Calidad -->
+    <div class="section is-medium">
+      <div class="container">
+        <div class="columns is-centered is-variable is-5 mb-5">
+          <div class="column" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
+            <b-image
+            src="https://picsum.photos/600/400"
+            ratio="6by3"
+            ></b-image> 
+          </div>
+          <div class="column" data-aos-duration="1700" data-aos="fade-up">
+            <h1 class="title">Politicas de Calidad</h1>
+            <p class="has-text-justified mb-3">Es política de calidad de COMERCIALIZADORA ZEYMA S.A.S. la satisfacción de las necesidades de todos nuestros clientes en el cumplimiento de los despachos oportunos y completos de sus pedidos, para lo cual contamos con un adecuado surtido de nuestros registros. Y tecnología adecuada.</p>
+
+            <p class="has-text-justified">Contamos con un equipo humano comprometido en todos los procesos tanto en el mejoramiento continuo como el de preservar el medio ambiente. Propiciamos un clima organización agradable y excelente comunicación con cada uno de nuestros proveedores y clientes. </p>            
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 </template>
 

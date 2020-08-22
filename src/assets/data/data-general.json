@@ -1,5 +1,6 @@
 {
 	"direccion": "Carrera 7F # 44 - 52, Barrio la alboraya. Barranquilla - Colombia.",
+	"descripcion":"Nuestras oficinas se encuentra ubicada en la siguiente dirección",
 	"correo1": "facturacion@zeyma.co",
 	"correo2": "czeyma@hotmail.com",
 	"telefono": "+57 (5) 363 2058, +57 (5) 362 8780",
@@ -8,7 +9,7 @@
 	"facebook": "",
 	"instagram": "",
 	"horario_corto": "Lun - Vie: 7:30 AM a 12:00 M - 2:00 PM a 6:00 PM",
-	"horario_largo":"",
+	"horario_finsemana":"Sabado: 7:30 AM a 1:00 PM",
 	"counter": [
 		{ "name": "Clientes", "count": 800 },
 		{ "name": "Años de Experiencia", "count": 22 },

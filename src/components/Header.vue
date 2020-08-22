@@ -30,18 +30,18 @@
 					</b-navbar-item>
 				</template>
 				<template slot="end">
-					<b-navbar-item tag="router-link" :to="{ path: '/about' }">
+					<b-navbar-item tag="router-link" :to="{ path: '/' }">
 						Inicio
 					</b-navbar-item>
 
 					<b-navbar-dropdown label="Nosotros">
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/about' }">
 							Quienes Somos
 						</b-navbar-item>
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/talentohumano' }">
 							Talento Humano
 						</b-navbar-item>
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/politicasdevolucion' }">
 							Politicas de Devolución
 						</b-navbar-item>
 						<b-navbar-item href="#">
@@ -58,13 +58,13 @@
 					</b-navbar-item>
 
 					<b-navbar-dropdown label="Contacto">
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/directorio' }">
 							Directorio
 						</b-navbar-item>
 						<b-navbar-item href="#">
 							PQRS
 						</b-navbar-item>
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/escribenos' }">
 							Escribenos
 						</b-navbar-item>
 					</b-navbar-dropdown>
