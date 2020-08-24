@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<div class="hero is-info" id="info__top">
+		<div class="hero" id="info__top">
 			<div class="hero-body">
 				<div class="container">
 					<h1 class="title is-size-2 is-uppercase has-text-weight-bold">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="section is-medium">
 			<div class="container">
-				<div class="columns">
+				<div class="columns" data-aos-duration="1700" data-aos="fade-up">
 					<div class="column is-12">
 						<div class="">
 							<b-image
@@ -22,14 +22,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="columns">
+				<div class="columns" data-aos-duration="1700" data-aos="fade-up">
 					<div class="column is-12 mb-6 has-text-centered">
 						<h1 class="title is-1">Politicas de Devolución</h1>
 						<p class="p-20">Con el deseo de prestar un excelente servicio nos permitimos informarles cuáles serán las políticas que se tendrán en cuenta en el momento de recibir las devoluciones de nuestros productos:</p>
 					</div>
 				</div>
 				
-				<div class="columns">
+				<div class="columns" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
 					<div class="column">
 						<div class="p-10">
 							<ol>

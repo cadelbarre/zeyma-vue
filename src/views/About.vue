@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="hero is-info" id="info__top">
+    <div class="hero" id="info__top">
       <div class="hero-body">
           <div class="container">
             <h1 class="title is-size-2 is-uppercase has-text-weight-bold">
@@ -21,7 +21,7 @@
   			</div>
   			<div class="column">
   				<b-image
-  				src="https://picsum.photos/600/400"
+  				:src="json.about"
   				ratio="6by3"
   				></b-image>	
   			</div>
@@ -46,13 +46,15 @@
         <div class="level">
           <div class="level-item has-text-centered"  v-for="(number) in json.counter">
             <div>
-              <p class="is-big">{{number.count}}</p>
+              <p class="is-big" v-if="number.name === 'Años de Experiencia'">{{(new Date).getFullYear() - 1998}}</p>
+              <p class="is-big" v-else>{{number.count}}</p>
               <p>{{number.name}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- eval((new Date).getFullYear() - 1999); -->
 
     <!-- Politicas de Calidad -->
     <div class="section is-medium">
@@ -60,7 +62,7 @@
         <div class="columns is-centered is-variable is-5 mb-5">
           <div class="column" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
             <b-image
-            src="https://picsum.photos/600/400"
+            :src="json.about"
             ratio="6by3"
             ></b-image> 
           </div>

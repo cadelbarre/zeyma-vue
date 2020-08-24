@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer">
-		<div class="container has-text-white">
+		<div class="container has-text-white" data-aos-duration="1700" data-aos="fade-right">
 			<div class="columns is-size-9 is-variable is-7">
 				<div class="column">
 					<figure class="image is-128x128">

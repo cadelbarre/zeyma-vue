@@ -90,7 +90,7 @@
 					</div>
 					<div class="column" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
 						<b-image
-						src="https://picsum.photos/600/400"
+						:src="json.about"
 						ratio="5by3"
 						></b-image>	
 					</div>
@@ -125,14 +125,32 @@
 				</div>
 			</div>
 		</div>
-		
+
+		<!-- Hero -->
+		<section class="hero is-medium" id="hero_home">
+		  <div class="hero-body">
+		  	<div class="container" data-aos-duration="1700" data-aos="fade-up">
+		  		<h1 class="title has-text-centered is-1 has-text-white">
+		  			Contamos con un equipo humano comprometido en todos los procesos tanto en el mejoramiento continuo como en el servicio al cliente.
+		  		</h1>
+		  		<div class="has-text-centered mt-6">
+		  			<b-button 
+		  			type="btn-primary" 
+		  			tag="router-link"
+		  			to="/about">Saber Más</b-button>
+		  		</div>
+		  	</div>
+		  </div>
+		</section>
+
 		<!-- Contador - cifras -->
 		<div class="section">
 			<div class="container">
 				<div class="level">
 					<div class="level-item has-text-centered"  v-for="(number) in json.counter">
 						<div>
-							<p class="is-big text-primary">{{number.count}}</p>
+							<p class="is-big text-primary" v-if="number.name === 'Años de Experiencia'">{{(new Date).getFullYear() - 1998}}</p>
+							<p class="is-big text-primary" v-else>{{number.count}}</p>
 							<p>{{number.name}}</p>
 						</div>
 					</div>

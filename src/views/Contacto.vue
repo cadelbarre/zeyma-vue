@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<div class="hero is-info" id="info__top">
+		<div class="hero" id="info__top">
 		  <div class="hero-body">
 		      <div class="container">
 		        <h1 class="title is-size-2 is-uppercase has-text-weight-bold">

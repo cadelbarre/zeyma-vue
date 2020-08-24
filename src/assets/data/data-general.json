@@ -12,10 +12,11 @@
 	"horario_finsemana":"Sabado: 7:30 AM a 1:00 PM",
 	"counter": [
 		{ "name": "Clientes", "count": 800 },
-		{ "name": "Años de Experiencia", "count": 22 },
+		{ "name": "Años de Experiencia", "count": "" },
 		{ "name": "Productos Codificados", "count": 3500 },
 		{ "name": "Número de Proveedores", "count": 83 }
 	],
+	"about": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2FSobre-nosotros.png?alt=media&token=1f83a7f0-5d2b-414c-9a25-f8e713c3617d",
 	"services":[
 		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fcommon_stock.jpg?alt=media&token=e656ce46-558d-4cfb-a55b-c8f756465137", "title":"Asesoramiento", "text":"Ofrecemos asesoramiento a nuestros clientes en nuevos proyectos y mejoramiento de proyectos actuales."},
 		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fplataforma-clientes.png?alt=media&token=c2c20998-222d-46e9-94a0-ea8c08cfeba8", "title":"Plataforma Web", "text":"Realiza tus pedidos de manera rapida, facil e intuitiva a través de nuestra plataforma web."},
