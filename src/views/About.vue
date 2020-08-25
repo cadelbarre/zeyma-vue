@@ -14,7 +14,7 @@
   		<div class="columns is-centered is-variable is-5 mb-5">
   			<div class="column">
   				<h1 class="title">Quienes Somos</h1>
-  				<p class="has-text-justified mb-3">Comercializadora ZEYMA SAS es una empresa que cuenta con mas de 22 años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía. Les ofrecemos a todos nuestros clientes las mejores promociones, ofertas y precios del mercado.</p>
+  				<p class="has-text-justified mb-3">Comercializadora ZEYMA SAS es una empresa que cuenta con mas de {{(new Date).getFullYear() - 1998}} años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía. Les ofrecemos a todos nuestros clientes las mejores promociones, ofertas y precios del mercado.</p>
 
           <p class="has-text-justified">El objetivo principal es buscar la satisfacción de nuestros clientes, obteniendo productos de alta calidad al alcance de su bolsillo. Durante nuestra trayectoria, hemos fortalecido los servicios que ofrecemos a cada uno de nuestros clientes. Nos orgullece decir que logramos entregar sus pedidos en un plazo inferior a 24 horas en la ciudad de Barranquilla.</p>
   				
@@ -88,10 +88,16 @@ export default {
   components: {
   },
   data(){
-        return {
-          json
-        }
+    return {
+      json
     }
+  },
+  methods:{
+    counter(){
+
+
+    }
+  }
 
 }
 </script>

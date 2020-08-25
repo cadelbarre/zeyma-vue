@@ -38,13 +38,13 @@
 						<b-navbar-item tag="router-link" :to="{ path: '/about' }">
 							Quienes Somos
 						</b-navbar-item>
-						<b-navbar-item tag="router-link" :to="{ path: '/talentohumano' }">
+						<b-navbar-item tag="router-link" :to="{ path: '/talento_humano' }">
 							Talento Humano
 						</b-navbar-item>
-						<b-navbar-item tag="router-link" :to="{ path: '/politicasdevolucion' }">
+						<b-navbar-item tag="router-link" :to="{ path: '/politicas_devolucion' }">
 							Politicas de Devolución
 						</b-navbar-item>
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/preguntas_frecuentes' }">
 							Preguntas Frecuentes
 						</b-navbar-item>
 					</b-navbar-dropdown>

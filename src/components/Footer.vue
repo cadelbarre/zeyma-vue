@@ -1,52 +1,53 @@
 <template>
 	<footer class="footer">
-		<div class="container has-text-white" data-aos-duration="1700" data-aos="fade-right">
+		<div class="container" data-aos-duration="1700" data-aos="fade-right">
 			<div class="columns is-size-9 is-variable is-7">
 				<div class="column">
 					<figure class="image is-128x128">
-					  <img src="../assets/img/zeyma-Original-mod.png">
+						<img src="../assets/img/zeyma-Original-mod.png">
 					</figure>
-					<p>Comercializadora ZEYMA SAS es una empresa que cuenta con más de 22 años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía.</p>
+					<p>Comercializadora ZEYMA SAS es una empresa que cuenta con más de {{(new Date).getFullYear() - 1998}} años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía.</p>
 				</div>
 				<div class="column">
-					<h1 class="is-size-3  has-text-weight-bold">Accesos Rapidos</h1>
+					<h1 class="is-size-3  has-text-weight-bold has-text-white">Accesos Rapidos</h1>
 					<ul class="footer__list">
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="">Plataforma Web</a></li>
+						</b-icon><a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank">Plataforma Web</a></li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="">Politicas de devolución</a></li>
+						</b-icon><a href="/politicas_devolucion">Politicas de devolución</a></li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="">Envios y Pedidos</a></li>
+						</b-icon><a href="/preguntas_frecuentes">Envios y Pedidos</a></li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="">PQRS</a></li>
+						</b-icon><a href="/pqrs">PQRS</a></li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="">Escribenos</a></li>
+						</b-icon><a href="/escribenos">Escribenos</a></li>
 					</ul>
 				</div>
 				<div class="column">
-					<h1 class="is-size-3 has-text-weight-bold">Información de Contacto</h1>
-					<p class="mb-3 mt-2">{{json.direccion}}</p>
-					<p class="mb-3">Teléfonos: {{json.telefono}}</p>
-					<p class="mb-3">Celulares: {{json.celular}}</p>
-					<p class="mb-3">Email: <a href="mailto:cadelbarre@gmail.com" class="has-text-weight-bold">{{json.correo1}}</a></p>
+					<h1 class="is-size-3 has-text-weight-bold has-text-white">Información de Contacto</h1>
+					<div class="footer__list">
+						<p class="mb-1 mt-2">{{json.direccion}}</p>
+						<p class="mb-1">{{json.telefono}}</p>
+						<p class="mb-1">{{json.celular}}</p>
+						<p class="mb-1">Email: <a href="mailto:cadelbarre@gmail.com" class="has-text-weight-bold">{{json.correo1}}</a></p>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</footer>
 </template>

@@ -27,9 +27,6 @@
 
 <style>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 /*--------------  Importamos todas los archivos CSS  --------------*/
 @import url('./assets/css/style.css');
 @import url('./assets/css/animate.css');

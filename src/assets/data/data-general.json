@@ -4,8 +4,9 @@
 	"correo1": "facturacion@zeyma.co",
 	"correo2": "czeyma@hotmail.com",
 	"telefono": "+57 (5) 363 2058, +57 (5) 362 8780",
-	"celular": "+57 317 3644 6328 - +57 318 343 7699",
-	"whatsapp":"+57 302 428 7831 - +57 318 343 7699",
+	"telefono2": "+57 (5) 366 1600, +57 (5) 364 6824",
+	"celular": "+57 317 644 6328, +57 318 343 7699",
+	"whatsapp":"+57 302 428 7831, +57 318 343 7699",
 	"facebook": "",
 	"instagram": "",
 	"horario_corto": "Lun - Vie: 7:30 AM a 12:00 M - 2:00 PM a 6:00 PM",
@@ -16,6 +17,7 @@
 		{ "name": "Productos Codificados", "count": 3500 },
 		{ "name": "Número de Proveedores", "count": 83 }
 	],
+	"costa":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fzeyma-costa.png?alt=media&token=dd1c181e-ca60-44f7-8f11-a76b523e6e8a",
 	"about": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2FSobre-nosotros.png?alt=media&token=1f83a7f0-5d2b-414c-9a25-f8e713c3617d",
 	"services":[
 		{"imagen": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/servicios%2Fcommon_stock.jpg?alt=media&token=e656ce46-558d-4cfb-a55b-c8f756465137", "title":"Asesoramiento", "text":"Ofrecemos asesoramiento a nuestros clientes en nuevos proyectos y mejoramiento de proyectos actuales."},

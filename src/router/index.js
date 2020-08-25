@@ -19,14 +19,19 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/talentohumano',
+    path: '/talento_humano',
     name: 'Talento',
     component: () => import(/* webpackChunkName: "about" */ '../views/Talentohumano.vue')
   },
   {
-    path: '/politicasdevolucion',
+    path: '/politicas_devolucion',
     name: 'Devolucion',
     component: () => import(/* webpackChunkName: "about" */ '../views/Devolucion.vue')
+  },
+  {
+    path: '/preguntas_frecuentes',
+    name: 'Frecuentes',
+    component: () => import(/* webpackChunkName: "about" */ '../views/preguntasfrecuentes.vue')
   },
   {
     path: '/escribenos',

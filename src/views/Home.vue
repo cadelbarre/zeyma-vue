@@ -22,7 +22,7 @@
 		</agile>
 		
 		<!-- Bienvenida -->
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 has-text-centered">
@@ -57,7 +57,7 @@
 						<p class="has-text-justified mt-3">Buscamos integrar todo nuestro sistema ERP con cada uno de nuestros colaboradores para poder tener onicanalidad. </p>
 					</div>
 					<div class="column">
-						<a href="#">
+						<a href="/pqrs" target="_blank">
 							<figure class="image is-200x200 m-auto">
 								<b-image
 								src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/bienvenida%2Fpqrs.png?alt=media&token=61705326-022f-4815-8ec9-74f0a858d063"
@@ -99,7 +99,7 @@
 		</div>
 		
 		<!-- Servicios -->
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
@@ -181,7 +181,7 @@
 		</div>
 
 			<!-- Publicaciones -->
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 has-text-centered mb-6">
@@ -189,7 +189,7 @@
 						<p class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus autem sint quae excepturi ullam aut, temporibus, vel, sequi quibusdam facere dolorem. Quidem nulla consequatur tempore hic sit quo vitae aperiam!</p>
 					</div>
 				</div>
-				<div class="columns">
+				<div class="columns is-variable is-7">
 					<div class="column">
 						<div class="card">
 						  <div class="card-image">
@@ -220,8 +220,66 @@
 						  </div>
 						</div>
 					</div>
-					<div class="column"></div>
-					<div class="column"></div>
+					<div class="column">
+						<div class="card">
+						  <div class="card-image">
+						    <figure class="image is-4by3">
+						      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+						    </figure>
+						  </div>
+						  <div class="card-content">
+						    <div class="media">
+						      <div class="media-left">
+						        <figure class="image is-48x48">
+						          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+						        </figure>
+						      </div>
+						      <div class="media-content">
+						        <p class="title is-4"></p>
+						        <p class="subtitle is-6">@johnsmith</p>
+						      </div>
+						    </div>
+
+						    <div class="content">
+						      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+						      <a href="#">#css</a> <a href="#">#responsive</a>
+						      <br>
+						      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+						    </div>
+						  </div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="card">
+						  <div class="card-image">
+						    <figure class="image is-4by3">
+						      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+						    </figure>
+						  </div>
+						  <div class="card-content">
+						    <div class="media">
+						      <div class="media-left">
+						        <figure class="image is-48x48">
+						          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+						        </figure>
+						      </div>
+						      <div class="media-content">
+						        <p class="title is-4"></p>
+						        <p class="subtitle is-6">@johnsmith</p>
+						      </div>
+						    </div>
+
+						    <div class="content">
+						      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+						      <a href="#">#css</a> <a href="#">#responsive</a>
+						      <br>
+						      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+						    </div>
+						  </div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -241,6 +299,21 @@ export default {
         return {
         	json
         }
+    },
+    methods:{
+    	counter(){
+
+    		const options = {
+    			  duration: 5,
+    		};
+    		let demo = new CountUp('myTargetElement', 6378, options);
+    		if (!demo.error) {
+    			  demo.start();
+    		} else {
+    			  console.error(demo.error);
+    		}
+
+    	}
     }
 
 }
