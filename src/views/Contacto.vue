@@ -9,7 +9,7 @@
 		      </div>
 		    </div>
 		</div>
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
@@ -17,7 +17,7 @@
 						<p class="p-20">Si tiene alguna pregunta, llámenos o complete el siguiente formulario y nos pondremos en contacto con usted lo más pronto posible.</p>
 					</div>
 				</div>
-				<div class="columns is-variable is-7">
+				<div class="columns is-variable is-7" data-aos-duration="1700" data-aos="fade-right">
 					<div class="column is-4">
 						<div>							
 							<h1 class="is-size-4 has-text-weight-medium text-primary mb-3">Información General</h1>

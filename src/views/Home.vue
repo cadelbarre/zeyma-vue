@@ -104,7 +104,7 @@
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
 						<h1 class="title is-1">Nuestros Servicios</h1>
-						<p class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus autem sint quae excepturi ullam aut, temporibus, vel, sequi quibusdam facere dolorem. Quidem nulla consequatur tempore hic sit quo vitae aperiam!</p>
+						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
 					</div>
 				</div>
 				<div class="columns is-variable is-5">
@@ -148,16 +148,30 @@
 			<div class="container">
 				<div class="level">
 					<div class="level-item has-text-centered"  v-for="(number) in json.counter">
-						<div>
-							<p class="is-big text-primary" v-if="number.name === 'Años de Experiencia'">{{(new Date).getFullYear() - 1998}}</p>
-							<p class="is-big text-primary" v-else>{{number.count}}</p>
+						<div v-if="position > 3250">
+							<p class="is-big text-primary" v-if="number.name === 'Años de Experiencia'">
+								<ICountUp
+								:delay="delay"
+								:endVal="(new Date).getFullYear() - 1998"
+								:options="options"
+								@ready="onReady"
+								/>
+							</p>
+							<p class="is-big text-primary" v-else>
+								<ICountUp
+								:delay="delay"
+								:endVal="number.count"
+								:options="options"
+								@ready="onReady"
+								/>
+							</p>
 							<p>{{number.name}}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Testimonios -->
 		<div class="section" id="testimonios">
 			<div class="container p-20">
@@ -290,31 +304,41 @@
 <script>
 // @ is an alias to /src
 import json from '@/assets/data/data-general.json';
+import ICountUp from 'vue-countup-v2';
 
 export default {
-  name: 'Home',
+  name: '',
   components: {
+  	ICountUp,
   },
-  data(){
-        return {
-        	json
-        }
-    },
-    methods:{
-    	counter(){
-
-    		const options = {
-    			  duration: 5,
-    		};
-    		let demo = new CountUp('myTargetElement', 6378, options);
-    		if (!demo.error) {
-    			  demo.start();
-    		} else {
-    			  console.error(demo.error);
-    		}
-
-    	}
+  data() {
+  	return {
+  		position: 0,
+  		json,
+  		delay: 1000,
+  		endVal: 100000,
+  		options: {
+  			useEasing: true,
+  			useGrouping: true,
+  			separator: ',',
+  			decimal: '.',
+  			prefix: '',
+  			suffix: ''
+  		}
+  	};
+  },
+  mounted(){
+  	var that = this;
+  	window.addEventListener("scroll", function(){
+  		that.position = window.scrollY;
+  	});
+  },
+  methods: {
+  	onReady: function(instance, CountUp) {
+  		const that = this;
+        // instance.update(that.endVal + 100);
     }
+	}
 
 }
 </script>

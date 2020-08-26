@@ -9,7 +9,7 @@
 		      </div>
 		    </div>
 		</div>
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
@@ -17,7 +17,7 @@
 						<p class="p-20">Bienvenidos a nuestro directorio general, no olvide contactarse a nuestras lineas de contacto PBX {{ json.telefono}}, {{ json.telefono2}} ó nuestras lineas moviles {{ json.celular}}</p>
 					</div>
 				</div>
-				<div class="columns is-10 is-centered">
+				<div class="columns is-10 is-centered" data-aos-duration="1700" data-aos="fade-right">
 					<table>
 						<thead>
 							<tr>

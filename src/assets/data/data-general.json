@@ -17,6 +17,8 @@
 		{ "name": "Productos Codificados", "count": 3500 },
 		{ "name": "Número de Proveedores", "count": 83 }
 	],
+	"talento_humano":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fgrupo-personas-trabajando.jpg?alt=media&token=837f4435-fa1b-4a0a-9a40-fae949b1ad89",
+	"politica":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fvista-superior-companeros-trabajo-planeando-estrategia_1098-2959.jpg?alt=media&token=75a0268d-4aa6-43c6-9ab8-087f402be9a3",
 	"costa":"https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fzeyma-costa.png?alt=media&token=dd1c181e-ca60-44f7-8f11-a76b523e6e8a",
 	"about": "https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2FSobre-nosotros.png?alt=media&token=1f83a7f0-5d2b-414c-9a25-f8e713c3617d",
 	"services":[

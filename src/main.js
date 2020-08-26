@@ -18,7 +18,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-import Counter from 'countup.js';
 
 new Vue({
   router,

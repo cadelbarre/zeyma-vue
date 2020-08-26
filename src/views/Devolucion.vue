@@ -9,7 +9,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns" data-aos-duration="1700" data-aos="fade-up">
 					<div class="column is-12">

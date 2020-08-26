@@ -9,12 +9,12 @@
 		      </div>
 		    </div>
 		</div>
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns is-variable is-5 is-centered">
 					<div class="column" data-aos-duration="1700" data-aos="fade-up">
 						<b-image
-						:src="json.about"
+						:src="json.talento_humano"
 						ratio="6by3"
 						></b-image>	
 					</div>
@@ -39,6 +39,27 @@
 						></b-image>	
 					</div>
 				</div>
+			</div>
+		</div>
+		<!-- Testimonios -->
+		<div class="section" id="testimonios">
+			<div class="container p-20">
+				<agile :autoplay-speed="5000" :speed="1500" autoplay="autoplay" :navButtons="true">
+					<div class="slide" id="testigos" v-for="slide in json.testimonios">
+						<figure class="image is-128x128 m-auto">
+							<b-image
+							:src="slide.imagen"
+							></b-image>
+						</figure>
+						<div class="has-text-centered mt-3">
+							<p class="mb-2">{{slide.text}}</p>
+							<h1 class="is-uppercase has-text-weight-bold is-size-5">{{slide.name}}</h1>
+							<h3 class="text-primary is-uppercase">{{slide.company}}</h3>
+						</div>
+					</div>
+					<template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
+					<template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
+				</agile>
 			</div>
 		</div>
 	</section>

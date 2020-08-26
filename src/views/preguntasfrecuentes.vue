@@ -9,7 +9,7 @@
 		      </div>
 		    </div>
 		</div>
-		<div class="section is-medium">
+		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
@@ -17,7 +17,7 @@
 						<p class="p-20">Si tienes alguna duda sobre nuestro servicio, como el horario de atención, entrega de los pedidos, el costo mínimo del pedido para poder ser enviado, entre otras; acá te damos algunas respuestas a esas inquietudes.</p>
 					</div>
 				</div>
-				<div class="columns">
+				<div class="columns" data-aos-duration="1700" data-aos="fade-up">
 					<div class="column is-10 m-auto">
 						
 						<b-collapse
@@ -52,9 +52,9 @@
 				</div>
 				<div class="columns">
 					<div class="column is-10 m-auto">
-						<b-notification type="is-warning" aria-close-label="Close notification">
-							Recuerde siempre pedir a nuestros representante de ventas ó telefonistas el recibo correspondiente al pago de la factura que va a realizar. Ese documento es el único soporte que tiene uds para demostrar la cancelación de sus facturas. <br><br>
-							Para más información comuníquese con nosotros en la línea de atención al {{json.telefono}} ext 101 102 y 103 o al correo: {{json.correo1}}.
+						<b-notification type="is-warning has-text-centered" aria-close-label="Close notification">
+							<em>Recuerde siempre pedir a nuestros representante de ventas ó telefonistas el recibo correspondiente al pago de la factura que va a realizar. Ese documento es el único soporte que tiene uds para demostrar la cancelación de sus facturas. <br><br>
+							<strong>Para más información comuníquese con nosotros en la línea de atención al {{json.telefono}} ext 101 102 y 103 o al correo: {{json.correo1}}.</strong></em>
 						</b-notification>
 					</div>
 				</div>
