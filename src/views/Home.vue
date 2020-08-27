@@ -26,11 +26,11 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-12 has-text-centered">
-						<h1 class="title is-size-1 is-uppercase">Bienvenidos a <br>Comercializadora ZEYMA S.A.S</h1>
+						<h1 class="title is-1 is-uppercase">Bienvenidos a <br>Comercializadora ZEYMA S.A.S</h1>
 					</div>
 				</div>
 				<div class="columns mt-6 is-variable is-5">
-					<div class="column">
+					<div class="column is-4-tablet">
 						<a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank">
 							<figure class="image is-200x200 m-auto">
 								<b-image
@@ -43,7 +43,7 @@
 						</a> 
 						<p class="has-text-justified mt-3">A través de nuestra plataforma podras realizar todos sus pedidos de una manera facil, rapida e intuitiva.</p>
 					</div>
-					<div class="column">
+					<div class="column is-4-tablet">
 						<a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank"> 
 							<figure class="image is-200x200 m-auto">
 								<b-image
@@ -56,7 +56,7 @@
 						</a> 
 						<p class="has-text-justified mt-3">Buscamos integrar todo nuestro sistema ERP con cada uno de nuestros colaboradores para poder tener onicanalidad. </p>
 					</div>
-					<div class="column">
+					<div class="column is-4-tablet">
 						<a href="/pqrs" target="_blank">
 							<figure class="image is-200x200 m-auto">
 								<b-image
@@ -75,6 +75,16 @@
 		
 		<!-- Quienes somos -->
 		<div class="section is-medium has-background-white-bis">
+			<button class="button is-primary is-medium"
+			@click="isImageModalActive = true">
+			Launch image modal
+			</button>
+			<b-modal v-model="isImageModalActive">
+				<p class="image modal__video">
+					<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+			</b-modal>
+
 			<div class="container">
 				<div class="columns is-centered is-variable is-5">
 					<div class="column" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up">
@@ -107,8 +117,8 @@
 						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
 					</div>
 				</div>
-				<div class="columns is-variable is-5">
-					<div class="column" v-for="(service) in json.services">
+				<div class="columns is-variable is-5 is-multiline">
+					<div class="column is-6-tablet" v-for="(service) in json.services">
 						<div class="card">
 						  <div class="card-image">
 						    <b-image
@@ -133,9 +143,9 @@
 		  		<h1 class="title has-text-centered is-1 has-text-white">
 		  			Contamos con un equipo humano comprometido en todos los procesos tanto en el mejoramiento continuo como en el servicio al cliente.
 		  		</h1>
-		  		<div class="has-text-centered mt-6">
+		  		<div class="has-text-centered">
 		  			<b-button 
-		  			type="btn-primary" 
+		  			type="btn-primary mt-6" 
 		  			tag="router-link"
 		  			to="/about">Saber Más</b-button>
 		  		</div>
@@ -148,7 +158,7 @@
 			<div class="container">
 				<div class="level">
 					<div class="level-item has-text-centered"  v-for="(number) in json.counter">
-						<div v-if="position > 3250">
+						<div v-if="position > 3000">
 							<p class="is-big text-primary" v-if="number.name === 'Años de Experiencia'">
 								<ICountUp
 								:delay="delay"
@@ -314,6 +324,7 @@ export default {
   data() {
   	return {
   		position: 0,
+  		isImageModalActive: false,
   		json,
   		delay: 1000,
   		endVal: 100000,

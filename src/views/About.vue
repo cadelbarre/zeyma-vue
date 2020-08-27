@@ -3,7 +3,7 @@
     <div class="hero" id="info__top">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-size-2 is-uppercase has-text-weight-bold">
+          <h1 class="title is-2 is-uppercase has-text-weight-bold">
             Quienes Somos
           </h1>
         </div>

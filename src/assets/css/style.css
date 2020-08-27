@@ -27,6 +27,11 @@ a[href*="mailto"]:hover{
 	color: white;
 }
 
+.modal__video iframe {
+  width: 100vw;
+  min-height: 80vh;
+}
+
 /*--------------  Tamaño imagen 200 x 200  --------------*/
 .is-200x200{
 	height: 12.5em;
@@ -269,6 +274,135 @@ color:white;
 .footer a[href]:hover{
 	color: white;
 	text-decoration: underline var(--color-primary);
+}
+
+/*------------ Media query para smartphone max-width: 767px -------------*/
+@media only screen and (max-width: 767px){
+	body{
+		font-size: 13px !important;
+	}
+
+	.navbar-item img {
+	    max-height: 3em !important;
+	}
+
+	.modal__video iframe {
+		width: 100vw;
+		min-height: 50vh;
+	}
+
+	.title{
+		font-size: 2em !important;
+	}
+
+	.title.is-1 {
+	    font-size: 2.3em !important;
+	}
+
+	h1.is-size-3{
+		font-size: 2em !important;
+	}
+
+	.is-200x200 {
+	    height: 9.5em;
+	    width: 9.5em;
+	}
+
+	.image.is-128x128 {
+	    height: 100px;
+	    width: 100px;
+	}
+
+	.is-big{
+		font-size: 4em;
+	}
+
+	h1.is-size-4 {
+	    font-size: 1.5em !important;
+	}
+
+	.button{
+		font-size: 1em !important;
+	}
+
+	.button.mt-6 {
+	    margin-top: 2em !important;
+	}
+
+	.label{
+		font-size: 1em !important;
+	}
+
+	.p-20 {
+	    padding: 0px 8%;
+	}
+}
+
+/*------------ Media query para TABLET (max-width: 768px) and (min-width:1023px) -------------*/
+@media only screen and (min-width: 768px) and (max-width:1023px){
+	body{
+		font-size: 15px !important;
+	}
+
+	.navbar-item img {
+	    max-height: 3em !important;
+	}
+
+	.modal__video iframe {
+		width: 100vw;
+		min-height: 50vh;
+	}
+
+	.title{
+		font-size: 2em !important;
+	}
+
+	.title.is-1 {
+	    font-size: 2.3em !important;
+	}
+
+	h1.is-size-3{
+		font-size: 2em !important;
+	}
+
+	.is-200x200 {
+	    height: 9.5em;
+	    width: 9.5em;
+	}
+
+	.image.is-128x128 {
+	    height: 100px;
+	    width: 100px;
+	}
+
+	.is-big{
+		font-size: 4em;
+	}
+
+	h1.is-size-4 {
+	    font-size: 1.5em !important;
+	}
+
+	.button{
+		font-size: 1em !important;
+	}
+
+	.button.mt-6 {
+	    margin-top: 2em !important;
+	}
+
+	.label{
+		font-size: 1em !important;
+	}
+
+	.p-20 {
+	    padding: 0px 8%;
+	}
+}
+
+/*------------ Media query para DESKTOP (min-width: 1024px) and (max-width:1279px) -------------*/
+@media only screen and (min-width: 1024px) and (max-width:1279px){
+	
 }
 
 

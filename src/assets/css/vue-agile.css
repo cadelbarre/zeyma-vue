@@ -52,7 +52,7 @@
 
 .slide {
   display: block;
-  height: 700px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -65,3 +65,5 @@
      object-fit: cover;
   width: 100%;
 }
+
+
