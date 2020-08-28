@@ -34,23 +34,22 @@
 					</div>
 					<div class="column is-8">
 						<b-field label="Nombre Completo">
-							<b-input></b-input>
+							<b-input v-model="nombre"></b-input>
 						</b-field>
 						<b-field grouped>
 							<b-field label="Correo Electronico" expanded>
-								<b-input></b-input>
+								<b-input v-model="email"></b-input>
 							</b-field>
 							<b-field label="Teléfono de Contacto" expanded>
-								<b-input></b-input>
+								<b-input v-model="telefono"></b-input>
 							</b-field>
 						</b-field>
 						<b-field label="Mensaje">
-							<b-input maxlength="200" type="textarea"></b-input>
+							<b-input maxlength="200" type="textarea" v-model="mensaje"></b-input>
 						</b-field>
 						<b-button tag="a"
 							type="btn-primary mt-4"
-							href="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/POLITICA_DEVOLUCIONES_ZEYMA.pdf?alt=media&token=5fca64e8-78af-4b47-a04f-3de250eab038"
-							target="_blank">
+							@click="submit">
 							Enviar Mensaje
 						</b-button>
 					</div>
@@ -65,14 +64,78 @@
 
 <script>
 import json from '@/assets/data/data-general.json';
+import Buefy from 'buefy'
+let emailjs = require('emailjs-com');
 
 export default {
-  name: 'Contacto',
-  data(){
-        return {
-        	json
-        }
-    }
+	name: 'Contacto',
+	data(){
+		return {
+			json,
+			nombre:"",
+			email:"",
+			mensaje:"",
+			telefono:""
+		}
+	},
+	created(){
+		emailjs.init("user_RawyKhtaF9kpTHAmzAs9Q");
+	},
+	methods:{
+		success() {
+					console.log(this.$buefy);
+			this.$buefy.toast.open({
+				message: 'Something happened correctly!',
+				type: 'is-success'
+			})
+		},
+		clear(){
+			this.nombre= "",
+			this.email= "",
+			this.mensaje= "",
+			this.telefono= ""
+		},
+		submit() {
+		      let data = {
+		        nombre: this.nombre,
+		        email: this.email,
+		        mensaje: this.mensaje,
+		        telefono: this.telefono,
+		        asunto: 'Solicitud de contactarnos'
+		      };
+
+		      let that = this.$buefy;
+
+		        emailjs.send("gmail", "template_SWQiaUxt", data).then(
+		          function(Response) {
+		            if (Response.text === "OK") {
+		            	that.toast.open({
+		            		message: 'Mensaje Enviado Correctamente!',
+		            		type: 'is-success'
+		            	})
+		            	this.clear();
+		            }
+		            console.log(
+		              "SUCCESS. status=%d, text=%s",
+		              Response.status,
+		              Response.text
+		            );
+		          },
+		          function(err) {
+		          	that.toast.open({
+		          		message: 'Ha ocurrido un problema al momento de enviar al correo!',
+		          		type: 'is-danger'
+		          	})
+		            console.log("FAILDED. error=", err);
+		          },
+		          // this.form.reset()
+		        );
+		      
+		    },
+		    clear(){
+		    	// this.form.reset()
+		    }
+	}
 }
 </script>
 

@@ -72,6 +72,12 @@
 				</div>
 			</div>
 		</div>
+
+		<b-modal v-model="isImageModalActive">
+			<p class="image modal__video">
+				<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</p>
+		</b-modal>
 		
 		<!-- Quienes somos -->
 		<div class="section is-medium has-background-white-bis">
@@ -100,11 +106,6 @@
 						</b-icon>
 						</button>
 						</div>
-						<b-modal v-model="isImageModalActive">
-							<p class="image modal__video">
-								<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</p>
-						</b-modal>
 						<b-image
 						:src="json.about"
 						ratio="4by3"
