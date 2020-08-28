@@ -12,6 +12,7 @@ body{
 	font-family: 'Roboto', sans-serif !important;
 	line-height: 1.6 !important;
 	font-size: 0.9375em;
+	font-weight: 300 !important;
 }
 
 .content{
@@ -154,6 +155,22 @@ a.navbar-item, a.navbar-link{
 
 .navbar-end > .navbar-item{
 	padding: 0.5rem 1.2em;
+}
+
+/* --------------------------- Quienes Somos --------------------------- */ 
+#play__video{
+	z-index: 1;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#play__video > .button{
+	padding: calc(2em - 1px) !important;
+	border-radius: 50%;
 }
 
 /*--------------  Testimonios  --------------*/
@@ -309,8 +326,8 @@ color:white;
 	}
 
 	.image.is-128x128 {
-	    height: 100px;
-	    width: 100px;
+	    height: 100px !important;
+	    width: 100px !important;
 	}
 
 	.is-big{
@@ -335,6 +352,11 @@ color:white;
 
 	.p-20 {
 	    padding: 0px 8%;
+	}
+
+	#play__video{
+		width: 90%;
+		height: 90%;
 	}
 }
 

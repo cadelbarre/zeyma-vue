@@ -66,4 +66,21 @@
   width: 100%;
 }
 
+/*------------ Media query para smartphone max-width: 767px -------------*/
+@media only screen and (max-width: 767px){
+  .agile__nav-button{
+    font-size: 15px;
+    width: 4em;
+  }
+}
+
+/*------------ Media query para TABLET (max-width: 768px) and (min-width:1023px) -------------*/
+@media only screen and (min-width: 768px) and (max-width:1023px) {
+  
+}
+
+/*------------ Media query para DESKTOP (min-width: 1024px) and (max-width:1279px) -------------*/
+@media only screen and (min-width: 1024px) and (max-width:1279px){
+  
+}
 

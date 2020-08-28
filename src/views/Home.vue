@@ -75,19 +75,9 @@
 		
 		<!-- Quienes somos -->
 		<div class="section is-medium has-background-white-bis">
-			<button class="button is-primary is-medium"
-			@click="isImageModalActive = true">
-			Launch image modal
-			</button>
-			<b-modal v-model="isImageModalActive">
-				<p class="image modal__video">
-					<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</p>
-			</b-modal>
-
 			<div class="container">
-				<div class="columns is-centered is-variable is-5">
-					<div class="column" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up">
+				<div class="columns is-centered is-variable is-5 is-multiline">
+					<div class="column is-12-tablet is-6-desktop" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up">
 						<h1 class="title">Quienes Somos</h1>
 						<p class="has-text-justified mb-3">Comercializadora ZEYMA SAS es una empresa que cuenta con mas de 22 años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía. Les ofrecemos a todos nuestros clientes las mejores promociones, ofertas y precios del mercado.</p>
 
@@ -98,10 +88,26 @@
 						tag="router-link"
                 		to="/about">Saber Más</b-button>
 					</div>
-					<div class="column" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
+					<div class="column is-12-tablet is-6-desktop" data-aos-anchor-placement="center-bottom" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
+						<div id="play__video">
+						<button class="button btn-primary" 
+						@click="isImageModalActive = true">
+						<b-icon
+						pack="fas"
+						icon="play"
+						size="is-medium"
+						@click="isImageModalActive = true">
+						</b-icon>
+						</button>
+						</div>
+						<b-modal v-model="isImageModalActive">
+							<p class="image modal__video">
+								<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</p>
+						</b-modal>
 						<b-image
 						:src="json.about"
-						ratio="5by3"
+						ratio="4by3"
 						></b-image>	
 					</div>
 				</div>
@@ -117,8 +123,8 @@
 						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
 					</div>
 				</div>
-				<div class="columns is-variable is-5 is-multiline">
-					<div class="column is-6-tablet" v-for="(service) in json.services">
+				<div class="columns is-variable is-3 is-multiline">
+					<div class="column is-6-tablet is-3-desktop is-12-mobile" v-for="(service) in json.services">
 						<div class="card">
 						  <div class="card-image">
 						    <b-image
@@ -145,7 +151,7 @@
 		  		</h1>
 		  		<div class="has-text-centered">
 		  			<b-button 
-		  			type="btn-primary mt-6" 
+		  			type="btn-primary mt-3" 
 		  			tag="router-link"
 		  			to="/about">Saber Más</b-button>
 		  		</div>
@@ -158,7 +164,7 @@
 			<div class="container">
 				<div class="level">
 					<div class="level-item has-text-centered"  v-for="(number) in json.counter">
-						<div v-if="position > 3000">
+						<div v-if="position > 3200">
 							<p class="is-big text-primary" v-if="number.name === 'Años de Experiencia'">
 								<ICountUp
 								:delay="delay"
@@ -214,7 +220,7 @@
 					</div>
 				</div>
 				<div class="columns is-variable is-7">
-					<div class="column">
+					<div class="column is-6-tablet is-4-desktop is-12-mobile">
 						<div class="card">
 						  <div class="card-image">
 						    <figure class="image is-4by3">
@@ -244,7 +250,7 @@
 						  </div>
 						</div>
 					</div>
-					<div class="column">
+					<div class="column is-6-tablet is-4-desktop is-12-mobile">
 						<div class="card">
 						  <div class="card-image">
 						    <figure class="image is-4by3">
@@ -274,7 +280,7 @@
 						  </div>
 						</div>
 					</div>
-					<div class="column">
+					<div class="column is-6-tablet is-4-desktop is-12-mobile">
 						<div class="card">
 						  <div class="card-image">
 						    <figure class="image is-4by3">
