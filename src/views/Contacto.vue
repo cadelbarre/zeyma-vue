@@ -38,14 +38,14 @@
 						</b-field>
 						<b-field grouped>
 							<b-field label="Correo Electronico" expanded>
-								<b-input v-model="email"></b-input>
+								<b-input v-model="email" type="email"></b-input>
 							</b-field>
 							<b-field label="Teléfono de Contacto" expanded>
 								<b-input v-model="telefono"></b-input>
 							</b-field>
 						</b-field>
 						<b-field label="Mensaje">
-							<b-input maxlength="200" type="textarea" v-model="mensaje"></b-input>
+							<b-input maxlength="400" type="textarea" v-model="mensaje"></b-input>
 						</b-field>
 						<b-button tag="a"
 							type="btn-primary mt-4"
@@ -96,24 +96,28 @@ export default {
 			this.telefono= ""
 		},
 		submit() {
+			let envio = new Date();
+			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 		      let data = {
 		        nombre: this.nombre,
 		        email: this.email,
 		        mensaje: this.mensaje,
 		        telefono: this.telefono,
-		        asunto: 'Solicitud de contactarnos'
+		        asunto: 'Solicitud de contactarnos',
+		        fecha: months[envio.getMonth()]+' '+envio.getDate()+'/'+envio.getFullYear()+' - '+envio.getHours()+':'+envio.getMinutes()
 		      };
 
-		      let that = this.$buefy;
-
+		      let that = this;
+		      	console.log(data)
 		        emailjs.send("gmail", "template_SWQiaUxt", data).then(
 		          function(Response) {
 		            if (Response.text === "OK") {
-		            	that.toast.open({
+		            	that.$buefy.toast.open({
 		            		message: 'Mensaje Enviado Correctamente!',
 		            		type: 'is-success'
 		            	})
-		            	this.clear();
+		            	that.clear();
 		            }
 		            console.log(
 		              "SUCCESS. status=%d, text=%s",
@@ -122,18 +126,14 @@ export default {
 		            );
 		          },
 		          function(err) {
-		          	that.toast.open({
+		          	that.$buefy.toast.open({
 		          		message: 'Ha ocurrido un problema al momento de enviar al correo!',
 		          		type: 'is-danger'
 		          	})
 		            console.log("FAILDED. error=", err);
 		          },
-		          // this.form.reset()
 		        );
 		      
-		    },
-		    clear(){
-		    	// this.form.reset()
 		    }
 	}
 }

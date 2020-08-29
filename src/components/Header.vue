@@ -2,26 +2,47 @@
 	<header>
 		<div class="content px-2 py-3 background-primary has-text-white">
 			<!-- Top header info empresa -->
-			<div class="container">
-				<div class="columns is-centered">
-					<div class="column is-offset-2 has-text-right">
-						<span class="is-size-9"><b-icon
-							pack="fas"
-							icon="map-marker-alt">
-						</b-icon>{{json.direccion}}</span>
-						<span class="is-size-9 ml-5"><b-icon
+			<div class="container" id="info_navbar_desktop"> 
+				<div class="columns is-centered has-text-centered is-mobile">
+					<div class="column is-size-9 is-6-desktop">
+						<b-icon
+						pack="fas"
+						icon="map-marker-alt">
+						</b-icon>{{json.direccion}}	
+					</div>
+					<div class="column is-size-9 is-3-desktop">
+						<b-icon
 							pack="fas"
 							icon="phone">
-						</b-icon>{{json.telefono}}</span>
-						<span class="is-size-9 ml-5"><b-icon
+						</b-icon>{{json.telefono}}	
+					</div>
+					<div class="column is-size-9 is-3-desktop">
+						<b-icon
 							pack="fas"
 							icon="envelope">
-						</b-icon> <a href="mailto:facturacion@zeyma.co">{{json.correo1}}</a></span>
+						</b-icon> <a href="mailto:facturacion@zeyma.co">{{json.correo1}}</a>	
 					</div>
 				</div>
-			</div>		
+			</div>
+
+			<div class="container" id="info_navbar_mobile">
+				<div class="columns is-centered has-text-centered is-mobile">
+					<div class="column is-size-9 is-6-mobile">
+						<b-icon
+							pack="fas"
+							icon="phone">
+						</b-icon>{{json.telefono}}	
+					</div>
+					<div class="column is-size-9 is-6-mobile">
+						<b-icon
+							pack="fas"
+							icon="envelope">
+						</b-icon> <a href="mailto:facturacion@zeyma.co">{{json.correo1}}</a>	
+					</div>
+				</div>
+			</div>	
 		</div>
-		<!-- Navbar (5) 363 2058 - (5) 362 8780-->
+		<!-- Navbar -->
 		<div class="container is-centered py-2">
 			<b-navbar>
 				<template slot="brand">
