@@ -82,7 +82,7 @@
 						<b-navbar-item tag="router-link" :to="{ path: '/directorio' }">
 							Directorio
 						</b-navbar-item>
-						<b-navbar-item href="#">
+						<b-navbar-item tag="router-link" :to="{ path: '/pqrs' }">
 							PQRS
 						</b-navbar-item>
 						<b-navbar-item tag="router-link" :to="{ path: '/escribenos' }">

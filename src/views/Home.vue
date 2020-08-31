@@ -355,8 +355,8 @@ export default {
   	onReady: function(instance, CountUp) {
   		const that = this;
         // instance.update(that.endVal + 100);
-    }
-	}
+    },
+}
 
 }
 </script>

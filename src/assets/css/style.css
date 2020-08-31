@@ -29,7 +29,7 @@ a[href*="mailto"]:hover{
 }
 
 .modal__video iframe {
-  width: 100vw;
+  width: 100%;
   min-height: 80vh;
 }
 
@@ -198,16 +198,13 @@ a.navbar-item, a.navbar-link{
 }
 
 /*--------------  Politicas Devolucion  --------------*/
-
 ol > li p{
 	margin-bottom: 1em;
 	margin-left: 0.9em;
 	text-align: justify;
 }
 
-/*--------------  Directorio  --------------*/
 /*----------  Tabla de Directorio Empresarial  ----------*/
-
 table {
   border-collapse: collapse;
   width: 62em;
@@ -255,6 +252,16 @@ color:white;
 }
 
 /*--------------  Fin del Directorio Empresarial  --------------*/
+
+/*--------------  PQRS  --------------*/
+.box{
+	padding: 4em 7em !important;
+}
+
+.box .title{
+	margin-bottom: 2em !important;
+}
+
 
 /*--------------  Footer  --------------*/
 .border-top{

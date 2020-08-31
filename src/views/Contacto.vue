@@ -97,7 +97,7 @@ export default {
 		},
 		submit() {
 			let envio = new Date();
-			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 		      let data = {
 		        nombre: this.nombre,
@@ -109,7 +109,7 @@ export default {
 		      };
 
 		      let that = this;
-		      	console.log(data)
+		      
 		        emailjs.send("gmail", "template_SWQiaUxt", data).then(
 		          function(Response) {
 		            if (Response.text === "OK") {

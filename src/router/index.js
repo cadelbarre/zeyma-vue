@@ -43,6 +43,16 @@ Vue.use(VueRouter)
     name: 'Directorio',
     component: () => import(/* webpackChunkName: "about" */ '../views/Directorio.vue')
   },
+   {
+    path: '/pqrs',
+    name: 'pqrs',
+    component: () => import(/* webpackChunkName: "about" */ '../views/pqrs.vue')
+  },
+   {
+    path: '/prueba',
+    name: 'prueba',
+    component: () => import(/* webpackChunkName: "about" */ '../views/prueba.vue')
+  },
 ]
 
 const router = new VueRouter({

@@ -76,7 +76,7 @@ export default {
         	collapses: [
         	{
         		title: '¿ En que horario hacen las entregas ?',
-        		text: 'Las entregas de los pedidos sólo se realizarán de lunes a viernes de 8 am a 6 pm y los sábados de 8 de la mañana a 1 pm. Sí usted se encuentra en la ciudad de Barranquilla y realiza su pedido en el transcurso de la mañana (Máximo 10:00 am), le entregaremos sus productos el mismo día. Pasada esta hora, la entrega se realizará en un máximo de 12 horas hábiles después de haberlo solicitado.'
+        		text: 'Las entregas de los pedidos sólo se realizarán de lunes a viernes de 8 am a 6 pm y los sábados de 8 am a 1 pm. Sí usted se encuentra en la ciudad de Barranquilla y realiza su pedido en el transcurso de la mañana (Máximo 11:00 am), le entregaremos sus productos el mismo día. Pasada esta hora, la entrega se realizará en un máximo de 12 horas hábiles después de haberlo solicitado.'
         	},
         	{
         		title: '¿ Cuál es el horario de atención ?',
