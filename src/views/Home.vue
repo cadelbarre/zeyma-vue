@@ -1,25 +1,25 @@
 <template>
 	<section>
-		<!-- Carousel -->
-		<agile :autoplay-speed="5000" :speed="1500" autoplay="autoplay" :navButtons="true">
+		<!-- Carousel :autoplay-speed="5000" :speed="1500" autoplay="autoplay"-->
+		<!-- <agile :navButtons="true">
 			<div class="slide">
-				<b-image
-				src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/slides%2F1.jpg?alt=media&token=e18cee54-0d7b-4134-904c-d2ed1f21637e"
-				></b-image>
+				<img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/>
 			</div>
 			<div class="slide">
-				<b-image
-				src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/slides%2F2.jpg?alt=media&token=c5e21c0e-1956-4b06-a722-115e05ff34e9"
-				></b-image>
+				<img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/>
 			</div>
-			<div class="slide">
-				<b-image
-				src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/slides%2F3.jpg?alt=media&token=c34c9ed9-5807-46f1-b409-e571ef453164"
-				></b-image>
+			<div v-for="value in img" class="slide agile__slide" style="transition: none 0s ease 0s; transform: none; width: 1583px;">
+				<img :src="value">
 			</div>
 			<template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
 			<template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
-		</agile>
+		</agile> -->
+
+		<carousel :perPage="1" :autoplay="true" :autoplayTimeout="5000">
+		  <slide v-for="value in img" >
+		    <img :src="value">
+		  </slide>
+		</carousel>
 		
 		<!-- Bienvenida -->
 		<div class="section is-medium has-shadow">
@@ -319,6 +319,11 @@
 </template>
 
 <script>
+/*--------------  Firebase  --------------*/
+import Firebase from 'firebase';
+import "firebase/firestore";
+import Config from '@/config/config';
+
 // @ is an alias to /src
 import json from '@/assets/data/data-general.json';
 import ICountUp from 'vue-countup-v2';
@@ -330,6 +335,8 @@ export default {
   },
   data() {
   	return {
+  		img: [],
+  		Firebase,
   		position: 0,
   		isImageModalActive: false,
   		json,
@@ -344,6 +351,41 @@ export default {
   			suffix: ''
   		}
   	};
+  },
+  created(){
+  	let app = Firebase.initializeApp(Config);
+  	let db = Firebase.storage();
+  	let storageRef = db.ref();
+
+  	/*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
+  	// Create a reference under which you want to list
+  	var listRef = storageRef.child('slides');
+  	this.img = [];
+  	var imgArray = this.img;
+
+  	// Find all the prefixes and items.
+  	listRef.listAll().then(function(res) {
+  	  res.prefixes.forEach(function(folderRef) {
+  	    console.log('1. ' + folderRef)
+  	    // All the prefixes under listRef.
+  	    // You may call listAll() recursively on them.
+  	  });
+  	  res.items.forEach(function(itemRef) {
+  	  
+  	      let storeRef = db.ref(itemRef.fullPath);
+  	      storeRef.getDownloadURL().then(function(url) {
+  	      // inserted into an variable.
+  	      imgArray.push(url)
+  	      }).catch(function(error) {
+  	      // Handle any errors
+  	      });
+  	    
+  	  });
+
+  	}).catch(function(error) {
+  	  console.log('error: '+ error)
+  	});
+
   },
   mounted(){
   	var that = this;
