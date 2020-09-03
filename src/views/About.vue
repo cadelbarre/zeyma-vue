@@ -88,10 +88,24 @@
     </div>
   </div>
 
+  <!-- Proveedores -->
+  <div class="section">
+    <carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :autoplayHoverPause="true" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true">
+      <slide v-for="value in img" >
+        <img :src="value">
+      </slide>
+    </carousel>
+  </div>
+
 </section>
 </template>
 
 <script>
+/*--------------  Firebase  --------------*/
+import Firebase from 'firebase';
+import "firebase/firestore";
+import Config from '@/config/config';
+
 // @ is an alias to /src
 import json from '@/assets/data/data-general.json';
 import ICountUp from 'vue-countup-v2';
@@ -103,6 +117,9 @@ export default {
   },
   data() {
     return {
+      count: 0,
+      img: [],
+      Firebase,
       position: 0,
       json,
       delay: 1000,
@@ -122,6 +139,44 @@ export default {
     window.addEventListener("scroll", function(){
      that.position = window.scrollY;
    });
+  },
+  created(){
+    
+    if (!Firebase.apps.length) {
+       Firebase.initializeApp(Config);
+    }
+    let db = Firebase.storage();
+    let storageRef = db.ref();
+
+    /*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
+    // Create a reference under which you want to list
+    var listRef = storageRef.child('proveedores');
+    this.img = [];
+    var imgArray = this.img;
+
+    // Find all the prefixes and items.
+    listRef.listAll().then(function(res) {
+      res.prefixes.forEach(function(folderRef) {
+        console.log('1. ' + folderRef)
+        // All the prefixes under listRef.
+        // You may call listAll() recursively on them.
+      });
+      res.items.forEach(function(itemRef) {
+      
+          let storeRef = db.ref(itemRef.fullPath);
+          storeRef.getDownloadURL().then(function(url) {
+          // inserted into an variable.
+          imgArray.push(url)
+          }).catch(function(error) {
+          // Handle any errors
+          });
+        
+      });
+
+    }).catch(function(error) {
+      console.log('error: '+ error)
+    });
+
   },
 
   methods: {

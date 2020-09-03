@@ -92,6 +92,22 @@ a[href*="mailto"]:hover{
 	padding-top: calc(1.5em - 1px) !important;
 }
 
+	/*--------------  Animacion Boton hover  --------------*/
+.button:before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;
+}
+.button:hover:before {
+width: 100%;
+}
+/*--------------  Fin Animacion Boton hover  --------------*/
+
 .btn-primary{
 	background-color: var(--color-primary) !important;
 	color: white !important;
@@ -121,12 +137,20 @@ input:focus, textarea:focus{
 	max-height: 6em !important;
 }
 
- #info_navbar_desktop{
- 	
- }
-
  #info_navbar_mobile{
  	display: none;
+ }
+
+ img#slider{
+ 	width: 100vw !important;
+ }
+
+ #Carousel .VueCarousel-wrapper{
+ 	margin-bottom: -20px !important;
+ }
+
+ #Carousel .VueCarousel-pagination{
+ 	height: 0px !important;
  }
 
 /*--------------  Navbar  --------------*/
@@ -153,11 +177,11 @@ a.navbar-item:hover, a.navbar-link:hover{
 
 a.navbar-item.router-link-exact-active {
   color: var(--color-primary) !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a.navbar-item, a.navbar-link{
-	font-weight: 600;
+	font-weight: 500;
 /*	font-size: 0.9375em; 
 */}
 
@@ -176,9 +200,26 @@ a.navbar-item, a.navbar-link{
 	height: 100%;
 }
 
+#play__video::before, #play__video::after {
+	content:"";
+	position:absolute;
+	z-index: 1;
+	border-radius: 50%;
+	animation: latido linear 3s infinite;
+}
+
+#play__video::after {
+  animation-delay: -1.5s;
+}
+
 #play__video > .button{
 	padding: calc(2em - 1px) !important;
 	border-radius: 50%;
+}
+
+@keyframes latido {
+  0% { width:4.375em; height:4.375em; border:0.9375em solid #E7E7E7; }
+  100% { width:8.75em; height:8.75em; border:0.625em solid transparent; }
 }
 
 /*--------------  Testimonios  --------------*/
@@ -262,6 +303,14 @@ color:white;
 	margin-bottom: 2em !important;
 }
 
+.message {
+    font-size: 1em !important;
+}
+
+/*--------------  Error404  --------------*/
+#error404{
+	max-width: 50em;
+}
 
 /*--------------  Footer  --------------*/
 .border-top{
@@ -343,6 +392,10 @@ color:white;
 	    font-size: 2.3em !important;
 	}
 
+	.subtitle{
+		font-size: 1.25em !important;
+	}
+
 	h1.is-size-3{
 		font-size: 2em !important;
 	}
@@ -420,6 +473,10 @@ color:white;
 
 	.title.is-1 {
 	    font-size: 2.3em !important;
+	}
+
+	.subtitle{
+		font-size: 1.25em !important;
 	}
 
 	h1.is-size-3{

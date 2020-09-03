@@ -38,15 +38,12 @@
 						<b-input maxlength="400" type="textarea" v-model="mensaje"></b-input>
 					</b-field>
 
-					<b-notification v-if="errors.length"
-					type="is-danger"
-					aria-close-label="Close notification"
-					role="alert">
-					<b>POR FAVOR, CORRIJA EL(LOS) SIGUIENTES(S) ERROR(ES):</b>
-					<ul>
-						<li v-for="error in errors">- {{error}}</li>
-					</ul>
-					</b-notification>
+          <b-message type="is-danger" v-if="errors.length">
+            <b>POR FAVOR, CORRIJA EL(LOS) SIGUIENTES(S) ERROR(ES):</b>
+            <ul class="mt-2">
+              <li v-for="error in errors">- {{error}}</li>
+            </ul>
+          </b-message>
 
 					<b-button tag="a"
 						type="button btn-primary" :class="{'is-loading': isSend }"
@@ -116,7 +113,7 @@ export default {
 
   		} else {
   			this.errors = [];
-  			this.isSend= true;
+  			this.isSend = true;
   			let envio = new Date();
   			var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 

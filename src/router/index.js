@@ -48,10 +48,15 @@ Vue.use(VueRouter)
     name: 'pqrs',
     component: () => import(/* webpackChunkName: "about" */ '../views/pqrs.vue')
   },
-   {
+  {
     path: '/prueba',
     name: 'prueba',
     component: () => import(/* webpackChunkName: "about" */ '../views/prueba.vue')
+  },
+   {
+    path: '/*',
+    name: 'Error404',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Error404.vue')
   },
 ]
 

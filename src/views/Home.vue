@@ -1,26 +1,15 @@
 <template>
 	<section>
-		<!-- Carousel :autoplay-speed="5000" :speed="1500" autoplay="autoplay"-->
-		<!-- <agile :navButtons="true">
-			<div class="slide">
-				<img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/>
-			</div>
-			<div class="slide">
-				<img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/>
-			</div>
-			<div v-for="value in img" class="slide agile__slide" style="transition: none 0s ease 0s; transform: none; width: 1583px;">
-				<img :src="value">
-			</div>
-			<template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
-			<template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
-		</agile> -->
+		<!-- Slides -->
+		 <carousel :autoplay="true" :autoplayTimeout="3000" :scrollPerPage="false" :perPageCustom="[[768, 1], [200, 1]]" :loop="true" :paginationActiveColor="'#999999'" :navigationEnabled="true" id="Carousel">
+		   <slide v-for="value in img.slides">
+		     <b-image
+		     :src="value" id="slider"
+		     ratio="16by9"
+		     ></b-image>
+		   </slide>
+		 </carousel>
 
-		<carousel :perPage="1" :autoplay="true" :autoplayTimeout="5000">
-		  <slide v-for="value in img" >
-		    <img :src="value">
-		  </slide>
-		</carousel>
-		
 		<!-- Bienvenida -->
 		<div class="section is-medium has-shadow">
 			<div class="container">
@@ -69,10 +58,12 @@
 						</a> 
 						<p class="has-text-justified mt-3">Nuestros canales estan abiertos para recibir todas sus peticiones, quejas, reclamos y sugerencias.</p>
 					</div>
+
 				</div>
 			</div>
 		</div>
 
+		<!-- Modal Video -->
 		<b-modal v-model="isImageModalActive">
 			<p class="image modal__video">
 				<iframe src="https://www.youtube.com/embed/Juqf9VkTgwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -98,12 +89,12 @@
 						<div id="play__video">
 						<button class="button btn-primary" 
 						@click="isImageModalActive = true">
-						<b-icon
-						pack="fas"
-						icon="play"
-						size="is-medium"
-						@click="isImageModalActive = true">
-						</b-icon>
+							<b-icon
+							pack="fas"
+							icon="play"
+							size="is-medium"
+							@click="isImageModalActive = true">
+							</b-icon>
 						</button>
 						</div>
 						<b-image
@@ -209,6 +200,15 @@
 					<template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
 				</agile>
 			</div>
+		</div>
+
+		<!-- Proveedores -->
+		<div class="section">
+			<carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true" :autoplayHoverPause="true">
+			  <slide v-for="value in img.logos" >
+			    <img :src="value">
+			  </slide>
+			</carousel>
 		</div>
 
 			<!-- Publicaciones -->
@@ -335,7 +335,13 @@ export default {
   },
   data() {
   	return {
-  		img: [],
+  		
+
+  		count: 0,
+  		img: {
+  			slides:[],
+  			logos: [],
+  		},
   		Firebase,
   		position: 0,
   		isImageModalActive: false,
@@ -353,38 +359,76 @@ export default {
   	};
   },
   created(){
-  	let app = Firebase.initializeApp(Config);
-  	let db = Firebase.storage();
-  	let storageRef = db.ref();
 
-  	/*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
-  	// Create a reference under which you want to list
-  	var listRef = storageRef.child('slides');
-  	this.img = [];
-  	var imgArray = this.img;
+  	if (!Firebase.apps.length) {
+  		Firebase.initializeApp(Config);
+  	}
 
-  	// Find all the prefixes and items.
-  	listRef.listAll().then(function(res) {
-  	  res.prefixes.forEach(function(folderRef) {
-  	    console.log('1. ' + folderRef)
-  	    // All the prefixes under listRef.
-  	    // You may call listAll() recursively on them.
-  	  });
-  	  res.items.forEach(function(itemRef) {
-  	  
-  	      let storeRef = db.ref(itemRef.fullPath);
-  	      storeRef.getDownloadURL().then(function(url) {
-  	      // inserted into an variable.
-  	      imgArray.push(url)
-  	      }).catch(function(error) {
-  	      // Handle any errors
-  	      });
-  	    
-  	  });
+    let db = Firebase.storage();
+    let storageRef = db.ref();
 
-  	}).catch(function(error) {
-  	  console.log('error: '+ error)
-  	});
+    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
+    // Create a reference under which you want to list
+    var listRef = storageRef.child('proveedores');
+    this.img.logos = [];
+    console.log(this.img);
+    var imgArray = this.img;
+
+    // Find all the prefixes and items.
+    listRef.listAll().then(function(res) {
+      res.prefixes.forEach(function(folderRef) {
+        console.log('1. ' + folderRef)
+        // All the prefixes under listRef.
+        // You may call listAll() recursively on them.
+      });
+      res.items.forEach(function(itemRef) {
+      
+          let storeRef = db.ref(itemRef.fullPath);
+          storeRef.getDownloadURL().then(function(url) {
+          // inserted into an variable.
+          imgArray.logos.push(url)
+          }).catch(function(error) {
+          console.log(error)
+          });
+        
+      });
+      console.log(imgArray.logos);
+      console.log(imgArray);
+    }).catch(function(error) {
+      console.log('error: '+ error)
+    });
+
+    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
+    // Create a reference under which you want to list
+    var listSlidesRef = storageRef.child('slides');
+    this.img.slides = [];
+    var imgArray = this.img;
+
+    // Find all the prefixes and items.
+    listSlidesRef.listAll().then(function(res) {
+      res.prefixes.forEach(function(folderRef) {
+        console.log('1. ' + folderRef)
+        // All the prefixes under listRef.
+        // You may call listAll() recursively on them.
+      });
+      res.items.forEach(function(itemRef) {
+      
+          let storeRef = db.ref(itemRef.fullPath);
+          storeRef.getDownloadURL().then(function(url) {
+          // inserted into an variable.
+          imgArray.slides.push(url)
+          console.log(imgArray)
+          }).catch(function(error) {
+          // Handle any errors
+          });
+        
+      });
+      console.log(imgArray.logos);
+      console.log(imgArray);
+    }).catch(function(error) {
+      console.log('error: '+ error)
+    });
+  	
 
   },
   mounted(){
@@ -402,3 +446,7 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+ 
+</style>

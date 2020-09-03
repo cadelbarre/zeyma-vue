@@ -22,6 +22,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 
+
 new Vue({
   router,
   render: h => h(App)

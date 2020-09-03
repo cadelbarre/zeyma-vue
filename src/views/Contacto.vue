@@ -41,15 +41,23 @@
 								<b-input v-model="email" type="email"></b-input>
 							</b-field>
 							<b-field label="Teléfono de Contacto" expanded>
-								<b-input v-model="telefono"></b-input>
+								<b-input v-model="telefono"  type="tel"></b-input>
 							</b-field>
 						</b-field>
 						<b-field label="Mensaje">
 							<b-input maxlength="400" type="textarea" v-model="mensaje"></b-input>
 						</b-field>
+
+						<b-message type="is-danger" v-if="errors.length">
+							<b>POR FAVOR, CORRIJA EL(LOS) SIGUIENTES(S) ERROR(ES):</b>
+							<ul class="mt-2">
+								<li v-for="error in errors">- {{error}}</li>
+							</ul>
+						</b-message>
+
 						<b-button tag="a"
 							type="btn-primary mt-4"
-							@click="submit">
+							@click="submit" :class="{'is-loading': isSend }">
 							Enviar Mensaje
 						</b-button>
 					</div>
@@ -75,27 +83,42 @@ export default {
 			nombre:"",
 			email:"",
 			mensaje:"",
-			telefono:""
+			telefono:"",
+			isSend: false,
+			errors:[],
 		}
 	},
 	created(){
 		emailjs.init("user_RawyKhtaF9kpTHAmzAs9Q");
 	},
 	methods:{
-		success() {
-					console.log(this.$buefy);
-			this.$buefy.toast.open({
-				message: 'Something happened correctly!',
-				type: 'is-success'
-			})
-		},
 		clear(){
 			this.nombre= "",
 			this.email= "",
 			this.mensaje= "",
-			this.telefono= ""
+			this.telefono= "",
+			this.isSend = false
 		},
 		submit() {
+			if (this.nombre == "" || this.email == "" || this.mensaje == "" || this.telefono == "") { 
+				this.errors = [];
+
+				if (!this.nombre) {
+					this.errors.push('Ingrese un nombre de contacto.');
+				}
+				if (!this.email) {
+					this.errors.push('Ingrese un correo electrónico para contactarlo.');
+				}
+				if (!this.telefono) {
+					this.errors.push('Ingrese un número teléfonico.');
+				}
+				if (!this.mensaje) {
+					this.errors.push('Ingrese un mensaje.');
+				}
+
+			} else {
+			this.errors = [];
+			this.isSend = true;
 			let envio = new Date();
 			var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -130,10 +153,11 @@ export default {
 		          		message: 'Ha ocurrido un problema al momento de enviar al correo!',
 		          		type: 'is-danger'
 		          	})
+		          	that.isSend = false;
 		            console.log("FAILDED. error=", err);
 		          },
 		        );
-		      
+		      }
 		    }
 	}
 }
