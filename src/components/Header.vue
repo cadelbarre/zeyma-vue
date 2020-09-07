@@ -1,5 +1,5 @@
 <template>
-	<header>
+	<header class="has-background-white">
 		<div class="content px-2 py-3 background-primary has-text-white">
 			<!-- Top header info empresa -->
 			<div class="container" id="info_navbar_desktop"> 
@@ -74,8 +74,11 @@
 						Servicios
 					</b-navbar-item>
 
-					<b-navbar-item href="#">
+					<b-navbar-item tag="router-link" :to="{ path: '/publicaciones' }">
 						Publicaciones
+					</b-navbar-item>
+					<b-navbar-item tag="router-link" :to="{ path: '/blog' }">
+						Blog
 					</b-navbar-item>
 
 					<b-navbar-dropdown label="Contacto">

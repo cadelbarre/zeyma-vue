@@ -34,6 +34,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/preguntasfrecuentes.vue')
   },
   {
+    path: '/publicaciones',
+    name: 'Publicaciones',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Publicaciones.vue')
+  },
+  {
     path: '/escribenos',
     name: 'Contacto',
     component: () => import(/* webpackChunkName: "about" */ '../views/Contacto.vue')
@@ -52,6 +57,11 @@ Vue.use(VueRouter)
     path: '/prueba',
     name: 'prueba',
     component: () => import(/* webpackChunkName: "about" */ '../views/prueba.vue')
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue')
   },
    {
     path: '/*',

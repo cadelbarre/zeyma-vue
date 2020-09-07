@@ -32,4 +32,5 @@
 @import url('./assets/css/animate.css');
 @import url('./assets/css/scrollanimation.css');
 @import url('./assets/css/vue-agile.css');
+
 </style>

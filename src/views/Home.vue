@@ -115,19 +115,22 @@
 						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
 					</div>
 				</div>
-				<div class="columns is-variable is-3 is-multiline">
+				
+				<div class="columns is-multiline">
 					<div class="column is-6-tablet is-3-desktop is-12-mobile" v-for="(service) in json.services">
-						<div class="card">
-						  <div class="card-image">
-						    <b-image
-						      :src="service.imagen"
-						      ratio="4by3"
-						      ></b-image>
-						  </div>
-						  <div class="card-content">
-						  	<h1 class="is-uppercase is-size-4 has-text-weight-bold has-text-centered mb-2 text-primary">{{service.title}}</h1>
-						  	<p class="has-text-justified">{{ service.text }}</p>
-						  </div>
+						<div class="card is-shady">
+							<div class="card-image">
+								<b-image
+								  :src="service.imagen"
+								  ratio="4by3"
+								  ></b-image>
+							</div>
+							<div class="card-content">
+								<div class="content">
+									<h3 class="text-primary has-text-centered">{{service.title}}</h3>
+									<p class="has-text-justified">{{ service.text }}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -215,102 +218,36 @@
 		<div class="section is-medium has-shadow">
 			<div class="container">
 				<div class="columns">
-					<div class="column is-12 has-text-centered mb-6">
+					<div class="column is-12 mb-6 has-text-centered">
 						<h1 class="title is-1">Publicaciones</h1>
-						<p class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus autem sint quae excepturi ullam aut, temporibus, vel, sequi quibusdam facere dolorem. Quidem nulla consequatur tempore hic sit quo vitae aperiam!</p>
+						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
 					</div>
 				</div>
-				<div class="columns is-variable is-7">
-					<div class="column is-6-tablet is-4-desktop is-12-mobile">
-						<div class="card">
-						  <div class="card-image">
-						    <figure class="image is-4by3">
-						      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-						    </figure>
-						  </div>
-						  <div class="card-content">
-						    <div class="media">
-						      <div class="media-left">
-						        <figure class="image is-48x48">
-						          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-						        </figure>
-						      </div>
-						      <div class="media-content">
-						        <p class="title is-4"></p>
-						        <p class="subtitle is-6">@johnsmith</p>
-						      </div>
-						    </div>
+				<div class="columns">
 
-						    <div class="content">
-						      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-						      <a href="#">#css</a> <a href="#">#responsive</a>
-						      <br>
-						      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-						    </div>
-						  </div>
+					<div class="column is-4">
+						<div class="card is-shady">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="content">
+									<h3>Desabastecimiento De Medicamentos En Colombia</h3>
+									<div class="tags has-addons">
+									    <span class="tag is-rounded btn-primary">cadelbarre</span>
+									    <span class="tag is-rounded">May 10, 2018</span>
+									</div>
+									<p>El desabastecimiento hace mención a la falta de disponibilidad en el mercado de un medicamento, una dificultad de acceso que se convierte en un problema reportado a nivel mundial que genera preocupación a todos los actores relacionados con la salud pública.</p>
+									<b-button tag="a" type="btn-primary mt-2">
+									  Conocer Mas
+									</b-button>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="column is-6-tablet is-4-desktop is-12-mobile">
-						<div class="card">
-						  <div class="card-image">
-						    <figure class="image is-4by3">
-						      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-						    </figure>
-						  </div>
-						  <div class="card-content">
-						    <div class="media">
-						      <div class="media-left">
-						        <figure class="image is-48x48">
-						          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-						        </figure>
-						      </div>
-						      <div class="media-content">
-						        <p class="title is-4"></p>
-						        <p class="subtitle is-6">@johnsmith</p>
-						      </div>
-						    </div>
-
-						    <div class="content">
-						      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-						      <a href="#">#css</a> <a href="#">#responsive</a>
-						      <br>
-						      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-						    </div>
-						  </div>
-						</div>
-					</div>
-					<div class="column is-6-tablet is-4-desktop is-12-mobile">
-						<div class="card">
-						  <div class="card-image">
-						    <figure class="image is-4by3">
-						      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-						    </figure>
-						  </div>
-						  <div class="card-content">
-						    <div class="media">
-						      <div class="media-left">
-						        <figure class="image is-48x48">
-						          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-						        </figure>
-						      </div>
-						      <div class="media-content">
-						        <p class="title is-4"></p>
-						        <p class="subtitle is-6">@johnsmith</p>
-						      </div>
-						    </div>
-
-						    <div class="content">
-						      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-						      <a href="#">#css</a> <a href="#">#responsive</a>
-						      <br>
-						      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-						    </div>
-						  </div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -371,7 +308,7 @@ export default {
     // Create a reference under which you want to list
     var listRef = storageRef.child('proveedores');
     this.img.logos = [];
-    console.log(this.img);
+    
     var imgArray = this.img;
 
     // Find all the prefixes and items.
@@ -392,8 +329,7 @@ export default {
           });
         
       });
-      console.log(imgArray.logos);
-      console.log(imgArray);
+      
     }).catch(function(error) {
       console.log('error: '+ error)
     });
@@ -417,14 +353,12 @@ export default {
           storeRef.getDownloadURL().then(function(url) {
           // inserted into an variable.
           imgArray.slides.push(url)
-          console.log(imgArray)
           }).catch(function(error) {
           // Handle any errors
           });
         
       });
-      console.log(imgArray.logos);
-      console.log(imgArray);
+      
     }).catch(function(error) {
       console.log('error: '+ error)
     });
@@ -447,6 +381,27 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
- 
+<style lang="css" scoped>
+.is-shady {
+	animation: flyintoright .4s backwards;
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 10px;
+	position: relative;
+	transition: all .2s ease-in-out;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+.is-shady:hover {
+	box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
+
+.card-content .content {
+  font-size: 0.9375em !important;
+  margin: 1rem 1rem !important;
+}
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
 </style>

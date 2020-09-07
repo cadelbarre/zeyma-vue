@@ -23,7 +23,7 @@
           <b-image
           :src="json.about"
           ratio="6by3"
-          ></b-image>	
+          ></b-image>
         </div>
       </div>
 
@@ -76,13 +76,13 @@
           <b-image
           :src="json.politica"
           ratio="6by3"
-          ></b-image> 
+          ></b-image>
         </div>
         <div class="column" data-aos-duration="1700" data-aos="fade-up">
           <h1 class="title">Politicas de Calidad</h1>
           <p class="has-text-justified mb-3">Es política de calidad de COMERCIALIZADORA ZEYMA S.A.S. la satisfacción de las necesidades de todos nuestros clientes en el cumplimiento de los despachos oportunos y completos de sus pedidos, para lo cual contamos con un adecuado surtido de nuestros registros. Y tecnología adecuada.</p>
 
-          <p class="has-text-justified">Contamos con un equipo humano comprometido en todos los procesos tanto en el mejoramiento continuo como el de preservar el medio ambiente. Propiciamos un clima organización agradable y excelente comunicación con cada uno de nuestros proveedores y clientes. </p>            
+          <p class="has-text-justified">Contamos con un equipo humano comprometido en todos los procesos tanto en el mejoramiento continuo como el de preservar el medio ambiente. Propiciamos un clima organización agradable y excelente comunicación con cada uno de nuestros proveedores y clientes. </p>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@ export default {
    });
   },
   created(){
-    
+
     if (!Firebase.apps.length) {
        Firebase.initializeApp(Config);
     }
@@ -162,7 +162,7 @@ export default {
         // You may call listAll() recursively on them.
       });
       res.items.forEach(function(itemRef) {
-      
+
           let storeRef = db.ref(itemRef.fullPath);
           storeRef.getDownloadURL().then(function(url) {
           // inserted into an variable.
@@ -170,7 +170,7 @@ export default {
           }).catch(function(error) {
           // Handle any errors
           });
-        
+
       });
 
     }).catch(function(error) {

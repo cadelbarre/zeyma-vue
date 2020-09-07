@@ -1,0 +1,41 @@
+#section__publicaciones{
+	/*background: #EFF3F4;*/
+}
+.features {
+  padding: 5em 0;
+}
+.box.cta {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+.card-image > .fa {
+  font-size: 8em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #209cee;
+}
+.card-content .content {
+  font-size: 0.9375em;
+  margin: 1rem 1rem;
+}
+
+.card {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  margin-bottom: 2em;
+}
+
+.is-shady {
+animation: flyintoright .4s backwards;
+background: #fff;
+box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+border-radius: 4px;
+display: inline-block;
+margin: 10px;
+position: relative;
+transition: all .2s ease-in-out;
+border: 1px solid rgba(0, 0, 0, .1);
+}
+.is-shady:hover {
+box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
