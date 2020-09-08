@@ -70,10 +70,6 @@
 						</b-navbar-item>
 					</b-navbar-dropdown>
 
-					<b-navbar-item href="#">
-						Servicios
-					</b-navbar-item>
-
 					<b-navbar-item tag="router-link" :to="{ path: '/publicaciones' }">
 						Publicaciones
 					</b-navbar-item>

@@ -225,24 +225,27 @@
 				</div>
 				<div class="columns">
 
-					<div class="column is-4">
+					<div class="column is-4" v-for="(blog, index) in blogs">
 						<div class="card is-shady">
 							<div class="card-image">
 								<figure class="image is-4by3">
-									<img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+									<img :src="blog.imagen" data-target="modal-image2">
 								</figure>
 							</div>
 							<div class="card-content">
 								<div class="content">
-									<h3>Desabastecimiento De Medicamentos En Colombia</h3>
+									<h3>{{blog.titulo}}</h3>
 									<div class="tags has-addons">
-									    <span class="tag is-rounded btn-primary">cadelbarre</span>
-									    <span class="tag is-rounded">May 10, 2018</span>
+									    <span class="tag is-rounded btn-primary">{{blog.autor}}</span>
+									    <span class="tag is-rounded">{{blog.fecha}}</span>
 									</div>
-									<p>El desabastecimiento hace mención a la falta de disponibilidad en el mercado de un medicamento, una dificultad de acceso que se convierte en un problema reportado a nivel mundial que genera preocupación a todos los actores relacionados con la salud pública.</p>
-									<b-button tag="a" type="btn-primary mt-2">
-									  Conocer Mas
-									</b-button>
+									<p class="has-text-justified">{{blog.resumen}}</p>
+									<b-button 
+									type="btn-primary mt-2" 
+									tag="router-link"
+									:to="{
+										path: '/blog',
+									}"></b-button>
 								</div>
 							</div>
 						</div>
@@ -273,8 +276,10 @@ export default {
   data() {
   	return {
   		
-
+  		name: '',
+  		blogs : {},
   		count: 0,
+  		json,
   		img: {
   			slides:[],
   			logos: [],
@@ -282,7 +287,6 @@ export default {
   		Firebase,
   		position: 0,
   		isImageModalActive: false,
-  		json,
   		delay: 1000,
   		endVal: 100000,
   		options: {
@@ -362,6 +366,15 @@ export default {
     }).catch(function(error) {
       console.log('error: '+ error)
     });
+
+    /*--------------  Obtener articulos del blog Real DataBase  --------------*/
+    let real = Firebase.database();
+    let dataBlog = real.ref('blog').on('value', snapshot => {
+    	this.blogs = snapshot.val()
+    	console.log(this.blogs);
+
+    })
+
   	
 
   },
@@ -376,6 +389,7 @@ export default {
   		const that = this;
         // instance.update(that.endVal + 100);
     },
+
 }
 
 }
