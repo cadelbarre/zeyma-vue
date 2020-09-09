@@ -14,7 +14,13 @@
   padding-top: 2em;
   padding-bottom: 2em;
   color: #209cee;
+  border-radius: 10px
 }
+
+.card:not(:first-child){
+  padding-top: 2em;
+}
+
 .card-content .content {
   font-size: 0.9375em;
   margin: 1rem 1rem;
@@ -34,8 +40,20 @@ display: inline-block;
 margin: 10px;
 position: relative;
 transition: all .2s ease-in-out;
-border: 1px solid rgba(0, 0, 0, .1);
+
 }
 .is-shady:hover {
 box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
+
+
+/*--------------  Entradas recientes  --------------*/
+article.media{
+  justify-self: center !important;
+  align-items: center !important; 
+}
+
+.media + .media {
+    margin-top: 0.5em !important;
+    padding-top: 0.5em !important;
 }

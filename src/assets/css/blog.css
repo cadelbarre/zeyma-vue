@@ -1,8 +1,9 @@
 #section__blog {
-  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
-  /*font-size: 14px;*/
-  background: #F0F2F4;
+    /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
+    /*font-size: 14px;*/
+    background: #F0F2F4;
 }
+
 /*.navbar.is-white {
   background: #F0F2F4;
 }
@@ -10,22 +11,29 @@
   font-size: 1.11rem;
   font-weight: bold;
 }*/
-.hero-body#hero__blog
-{background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Plum_trees_Kitano_Tenmangu.jpg/1200px-Plum_trees_Kitano_Tenmangu.jpg);
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-height: 31.25em;
+.text-shadow{
+    text-shadow: 2px 2px rgba(0,0,0,0.2);
 }
+
+.hero-body#hero__blog {
+    /*background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Plum_trees_Kitano_Tenmangu.jpg/1200px-Plum_trees_Kitano_Tenmangu.jpg);*/
+    background-position: center !important;
+    background-size: cover  !important;
+    background-repeat: no-repeat !important;
+    height: 25.25rem;
+}
+
 .articles {
-  padding-bottom: 5em;
-  margin-top: -12.5em;
+    padding-bottom: 5em;
+    margin-top: -12.5em;
 }
+
 .articles .content p {
     line-height: 1.9;
     margin: 15px 0;
     text-align: justify;
 }
+
 .author-image {
     position: absolute;
     top: -30px;
@@ -36,56 +44,62 @@ height: 31.25em;
     border: 3px solid #ccc;
     border-radius: 50%;
 }
+
 .media-center {
-  display: block;
-  margin-bottom: 1rem;
+    display: block;
+    margin-bottom: 1rem;
 }
+
 .media-content {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
-.article, .promo-block {
-  margin-top: 6em;
+
+.article,
+.promo-block {
+    margin-top: 6em;
 }
+
 div.column.is-8:first-child {
-  padding-top: 0;
-  margin-top: 0;
+    padding-top: 0;
+    margin-top: 0;
 }
+
 .article-title {
-  font-size: 2em;
-  /*font-weight: lighter;*/
-  line-height: 2;
+    font-size: 2.2em;
+    /*font-weight: lighter;*/
+    line-height: 1.3;
+    padding: 0 5%;
 }
+
 .article-subtitle {
-  color: #909AA0;
-  margin-bottom: 3em;
+    color: #909AA0;
+    margin-bottom: 3em;
 }
+
 .article-body {
-  line-height: 1.4;
-  margin: 0 6em !important;
+    line-height: 1.4;
+    margin: 0 6em !important;
 }
+
 .promo-block .container {
-  margin: 1rem 5rem;
+    margin: 1rem 5rem;
 }
 
 /*------------ Media query para smartphone max-width: 767px -------------*/
-@media only screen and (max-width: 767px){
-  .article-body {
-    line-height: 1.4;
-    margin: 0 1em;
-  }
+@media only screen and (max-width: 767px) {
+    .article-body {
+        line-height: 1.4;
+        margin: 0 1em !important;
+    }
 
-  .article-title {
-    font-size: 2em;
-    line-height: 1.3;
-  }
+    .article-title {
+        font-size: 2em;
+        line-height: 1.3;
+    }
 }
 
 /*------------ Media query para TABLET (max-width: 768px) and (min-width:1023px) -------------*/
-@media only screen and (min-width: 768px) and (max-width:1023px){
- 
-}
+@media only screen and (min-width: 768px) and (max-width:1023px) {}
 
 /*------------ Media query para DESKTOP (min-width: 1024px) and (max-width:1279px) -------------*/
-@media only screen and (min-width: 1024px) and (max-width:1279px){
-  
-}
+@media only screen and (min-width: 1024px) and (max-width:1279px) {}

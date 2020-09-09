@@ -59,8 +59,9 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/prueba.vue')
   },
   {
-    path: '/blog/:name',
+    path: '/blog/:id',
     name: 'Blog',
+    // component: require('../views/Blog.vue'),
     component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue'),
     props: true
   },

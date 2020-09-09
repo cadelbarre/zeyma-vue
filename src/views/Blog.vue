@@ -2,9 +2,9 @@
 	<section id="section__blog">
 
 		<section class="hero is-info is-medium is-bold">
-		    <div class="hero-body" id="hero__blog">
+		    <div class="hero-body" id="hero__blog" :style="img">
 		        <div class="container has-text-centered">
-		            <h1 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed eiusmod tempor incididunt ut labore et dolore magna aliqua</h1>
+		            <h1 class="title is-2 text-shadow">{{articule.titulo}}</h1>
 		        </div>
 		    </div>
 		</section>
@@ -22,13 +22,12 @@
 									<p class="title article-title">{{articule.titulo}}</p>
 									<div class="tags has-addons level-item">
 										<span class="tag is-rounded is-info">{{articule.autor}}</span>
-										<span class="tag is-rounded">{{articule.fecha}}</span>
+										<span class="tag is-rounded">{{articule.fecha}} - {{articule.categoria}}</span>
 									</div>
 								</div>
 							</div>
 							<div class="content article-body">
-								<b-tag type="is-info">{{articule.categoria}}</b-tag>
-								<p>{{articule.contenido}}</p>
+								<p>{{articule.body}}</p>
 							</div>
 						</div>
 					</div>
@@ -49,16 +48,18 @@ import "firebase/firestore";
 import Config from '@/config/config';
 
 
+
 export default {
   name: 'Blog',
   data () {
-    return {
-      articule: {}
-    };
+  	return {
+  		articule: {},
+  		img: '',
+  	};
   },
   props: {
-    name: {
-      type: Number, // String, Number, Boolean, Function, Object, Array
+   id: {
+      type: String, // String, Number, Boolean, Function, Object, Array
       required: true,
       default: 1
     }
@@ -71,9 +72,10 @@ export default {
 
   	/*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let dataBlog = real.ref('blog/' + this.name).on('value', snapshot => {
+    let dataBlog = real.ref('posts/' + this.id).on('value', snapshot => {
     	this.articule = snapshot.val()
-    	console.log(this.articule);
+    	// console.log(this.articule);
+    	this.img = "background-image: url(" + this.articule.imagen + ");"
 
     })
   }

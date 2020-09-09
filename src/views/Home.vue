@@ -234,18 +234,17 @@
 							</div>
 							<div class="card-content">
 								<div class="content">
-									<h3>{{blog.titulo}}</h3>
+									<h3><a href="/blog/0">{{blog.title}}</a></h3>
 									<div class="tags has-addons">
 									    <span class="tag is-rounded btn-primary">{{blog.autor}}</span>
-									    <span class="tag is-rounded">{{blog.fecha}}</span>
+									    <span class="tag is-rounded">{{blog.id}} - <a href="">{{blog.userId}}</a></span>
 									</div>
-									<p class="has-text-justified">{{blog.resumen}}</p>
+									<p class="has-text-justified">{{blog.body}}</p>
 									<b-button 
 									type="btn-primary mt-2" 
 									tag="router-link"
-									:to="{
-										path: '/blog',
-									}"></b-button>
+									:to="{ name: 'Blog', params: { id: index }}"
+									>Seguir Leyendo</b-button>
 								</div>
 							</div>
 						</div>
@@ -369,11 +368,15 @@ export default {
 
     /*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let dataBlog = real.ref('blog').on('value', snapshot => {
-    	this.blogs = snapshot.val()
-    	console.log(this.blogs);
+    let pruebass = real.ref('posts').limitToLast(3);
 
+    let dataBlog = pruebass.on('value', (snapshot) => {
+    	this.blogs = snapshot.val()
+    	console.log('Descargado con exito la información.');
+    	console.log(this.blogs);
     })
+
+
 
   	
 
