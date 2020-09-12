@@ -159,6 +159,10 @@ img#slider {
 
 #Carousel .VueCarousel-wrapper {
     margin-bottom: -20px !important;
+    min-height: 880px;
+    background: url('../img/tenorLow.gif');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #Carousel .VueCarousel-pagination {
@@ -337,6 +341,12 @@ table th {
     max-width: 50em;
 }
 
+.center{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
 /*--------------  Footer  --------------*/
 .border-top {
     border-top: 2px solid var(--color-primary);
@@ -410,6 +420,13 @@ table th {
         height: 5px !important;
         margin-top: 0px !important;
         padding: 5px !important;
+    }
+
+    #Carousel .VueCarousel-wrapper {
+        min-height: 100%;
+        background: url('../img/tenorMobile.gif');
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .modal__video iframe {

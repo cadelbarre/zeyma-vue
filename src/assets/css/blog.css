@@ -79,6 +79,7 @@ div.column.is-8:first-child {
 .article-body {
     line-height: 1.4;
     margin: 0 6em !important;
+    white-space: pre-wrap; /* Para permitir saltos de linea.*/
 }
 
 .promo-block .container {
