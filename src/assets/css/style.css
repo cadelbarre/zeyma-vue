@@ -159,7 +159,7 @@ img#slider {
 
 #Carousel .VueCarousel-wrapper {
     margin-bottom: -20px !important;
-    min-height: 880px;
+    min-height: 600px;
     background: url('../img/tenorLow.gif');
     background-position: center;
     background-repeat: no-repeat;

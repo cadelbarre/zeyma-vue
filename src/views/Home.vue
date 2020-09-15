@@ -236,14 +236,14 @@
 								<div class="content">
 									<h3><a href="/blog/0">{{blog.title}}</a></h3>
 									<div class="tags has-addons">
-									    <span class="tag is-rounded btn-primary">{{blog.autor}}</span>
-									    <span class="tag is-rounded">{{blog.id}} - <a href="">{{blog.userId}}</a></span>
+									    <span class="tag is-rounded btn-primary">{{blog.user}}</span>
+									    <span class="tag is-rounded"><a href="">{{blog.date}}</a></span>
 									</div>
-									<p class="has-text-justified">{{blog.body}}</p>
+									<p class="has-text-justified">{{blog.abstract}}</p>
 									<b-button 
 									type="btn-primary mt-2" 
 									tag="router-link"
-									:to="{ name: 'Blog', params: { id: index }}"
+									:to="{ name: 'Blog', params: { year: blog.title.replace(/ /g, '-') }}"
 									>Seguir Leyendo</b-button>
 								</div>
 							</div>
@@ -276,7 +276,7 @@ export default {
   	return {
   		
   		name: '',
-  		blogs : {},
+  		blogs : [],
   		count: 0,
   		json,
   		img: {
@@ -337,7 +337,7 @@ export default {
       console.log('error: '+ error)
     });
 
-    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
+    /*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
     // Create a reference under which you want to list
     var listSlidesRef = storageRef.child('slides');
     this.img.slides = [];
@@ -368,17 +368,11 @@ export default {
 
     /*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let pruebass = real.ref('posts').limitToLast(3);
+    let pruebass = real.ref('post').orderByChild("filtro").limitToFirst(3);
 
-    let dataBlog = pruebass.on('value', (snapshot) => {
-    	this.blogs = snapshot.val()
-    	console.log('Descargado con exito la información.');
-    	console.log(this.blogs);
+    let dataBlog = pruebass.on("child_added", (snapshot) => {
+    	this.blogs.push(snapshot.val());
     })
-
-
-
-  	
 
   },
   mounted(){

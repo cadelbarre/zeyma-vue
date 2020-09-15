@@ -4,7 +4,7 @@
 		<section class="hero is-info is-medium is-bold">
 		    <div class="hero-body" id="hero__blog" :style="img">
 		        <div class="container has-text-centered">
-		            <h1 class="title is-2 text-shadow">{{articule.titulo}}</h1>
+		            <h1 class="title is-2 text-shadow">{{articule.title}}</h1>
 		        </div>
 		    </div>
 		</section>
@@ -19,10 +19,10 @@
 						<div class="card-content">
 							<div class="media">
 								<div class="media-content has-text-centered">
-									<p class="title article-title">{{articule.titulo}}</p>
+									<p class="title article-title">{{articule.title}}</p>
 									<div class="tags has-addons level-item">
-										<span class="tag is-rounded is-info">{{articule.autor}}</span>
-										<span class="tag is-rounded">{{articule.fecha}} - {{articule.categoria}}</span>
+										<span class="tag is-rounded is-info">{{articule.user}}</span>
+										<span class="tag is-rounded">{{articule.date}} - {{articule.category}}</span>
 									</div>
 								</div>
 							</div>
@@ -47,8 +47,6 @@ import Firebase from 'firebase';
 import "firebase/firestore";
 import Config from '@/config/config';
 
-
-
 export default {
   name: 'Blog',
   data () {
@@ -58,7 +56,7 @@ export default {
   	};
   },
   props: {
-   id: {
+   year: {
       type: String, // String, Number, Boolean, Function, Object, Array
       required: true,
       default: 1
@@ -72,10 +70,10 @@ export default {
 
   	/*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let dataBlog = real.ref('posts/' + this.id).on('value', snapshot => {
+    let dataBlog = real.ref('post/' + this.year).on('value', snapshot => {
     	this.articule = snapshot.val()
     	// console.log(this.articule);
-    	this.img = "background-image: url(" + this.articule.imagen + ");"
+    	// this.img = "background-image: url(" + this.articule.imagen + ");"
 
     })
   }

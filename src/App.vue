@@ -8,7 +8,6 @@
 	  	    <router-view/>
 		</transition>
    <Footer/>
-  <Login/>
   </div>
 </template>
 
@@ -16,13 +15,11 @@
 /*--------------  Importamos Componentes claves  --------------*/
   import Header from './components/Header.vue';
   import Footer from './components/Footer.vue';
-  import Login from './components/Login.vue';
 
   export default {
   components:{
     Header,
     Footer,
-    Login
     }
   }
 
