@@ -13,11 +13,11 @@
 		<div class="container">
 			<!-- START ARTICLE FEED -->
 			<section class="articles">
-				<div class="column is-8 is-offset-2">
+				<div class="column is-10 is-offset-1">
 					<!-- START ARTICLE -->
 					<div class="card article">
 						<div class="card-content">
-							<div class="media">
+							<div class="media mt-5">
 								<div class="media-content has-text-centered">
 									<p class="title article-title">{{articule.title}}</p>
 									<div class="tags has-addons level-item">

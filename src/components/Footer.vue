@@ -4,7 +4,7 @@
 			<div class="columns is-size-9 is-variable is-7">
 				<div class="column">
 					<figure class="image is-128x128">
-						<img src="../assets/img/zeyma-Original-mod.png">
+						<img src="../assets/img/zeyma-Original-mod.webp">
 					</figure>
 					<p>Comercializadora ZEYMA SAS es una empresa que cuenta con más de {{(new Date).getFullYear() - 1998}} años de experiencia, apoyando a los droguistas que buscan adquirir productos de excelente calidad sin afectar su economía.</p>
 				</div>

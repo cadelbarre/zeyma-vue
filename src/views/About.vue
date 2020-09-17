@@ -21,7 +21,7 @@
       </div>
       <div class="column">
           <b-image
-          :src="json.about"
+          :src="require('../assets/img/bienvenida/Sobre-nosotros.webp')"
           ratio="6by3"
           ></b-image>
         </div>
@@ -74,7 +74,7 @@
       <div class="columns is-centered is-variable is-5 mb-5">
         <div class="column" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
           <b-image
-          :src="json.politica"
+          :src="require('../assets/img/nosotros/companeros-trabajo-planeando.webp')"
           ratio="6by3"
           ></b-image>
         </div>

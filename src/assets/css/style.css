@@ -139,7 +139,7 @@ textarea:focus {
 
 /*--------------  Home  --------------*/
 #hero_home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/bg/trabajo-equipo.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/bg/trabajo-equipo.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -253,7 +253,7 @@ a.navbar-link {
 
 /*--------------  Testimonios  --------------*/
 #testimonios {
-    background-image: url(../img/bg/fondo-mundo.png);
+    background-image: url(../img/bg/fondo-mundo.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -261,7 +261,7 @@ a.navbar-link {
 
 /*--------------  Hero paginas Info top  --------------*/
 #info__top {
-    background-image: url('../img/bg/fondo-mundo.png');
+    background-image: url('../img/bg/fondo-mundo.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -492,6 +492,52 @@ table th {
     .tag:not(body) {
         font-size: 0.8em !important;
     }
+
+    .field.is-grouped{
+        flex-direction: column !important;
+    }
+
+    .box{
+        padding: 2em !important;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 28em;
+        /*font-family: "Open Sans", sans-serif;*/
+        font-size: 0.7em;
+        text-align: left;
+    }
+
+    table,
+    td {
+        border: 2px solid rgb(210, 218, 226);
+        padding: 5px 8px !important;
+    }
+
+    #info__top .hero-body {
+        padding: 2em 1.5em !important;
+    }
+
+  /*  .area {
+        width: 1.25em;
+        color: white;
+    }
+
+    .nombre {
+        width: 12em;
+        color: white;
+    }
+
+    .extension {
+        width: 4em;
+        color: white;
+    }
+
+    .correo {
+        width: 8em;
+        color: white;
+    }*/
 }
 
 /*------------ Media query para TABLET (max-width: 768px) and (min-width:1023px) -------------*/

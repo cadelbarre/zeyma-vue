@@ -47,7 +47,7 @@
 			<b-navbar>
 				<template slot="brand">
 					<b-navbar-item tag="router-link" :to="{ path: '/' }">
-						<img src="../assets/img/zeyma-Original-mod.png">
+						<img src="../assets/img/zeyma-Original-mod.webp">
 					</b-navbar-item>
 				</template>
 				<template slot="end">
@@ -72,9 +72,6 @@
 
 					<b-navbar-item tag="router-link" :to="{ path: '/publicaciones' }">
 						Publicaciones
-					</b-navbar-item>
-					<b-navbar-item tag="router-link" :to="{ path: '/blog' }">
-						Blog
 					</b-navbar-item>
 
 					<b-navbar-dropdown label="Contacto">

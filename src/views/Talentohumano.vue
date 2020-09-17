@@ -14,7 +14,7 @@
 				<div class="columns is-variable is-5 is-centered">
 					<div class="column" data-aos-duration="1700" data-aos="fade-up">
 						<b-image
-						:src="json.talento_humano"
+						:src="require('../assets/img/nosotros/grupo-personas-trabajando.webp')"
 						ratio="6by3"
 						></b-image>	
 					</div>
@@ -34,7 +34,7 @@
 					</div>
 					<div class="column" data-aos-duration="1700" data-aos="fade-up" data-aos-delay="400">
 						<b-image
-						:src="json.costa"
+						:src="require('../assets/img/nosotros/zeyma-costa.webp')"
 						ratio="4by3"
 						></b-image>	
 					</div>

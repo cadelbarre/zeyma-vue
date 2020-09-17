@@ -15,7 +15,7 @@
 					<div class="column is-12">
 						<div class="">
 							<b-image
-							src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2FO6X5CP0.jpg?alt=media&token=6fe0ae82-4aef-4c8e-9ec4-a2220c094974"
+							:src="require('../assets/img/nosotros/companeros-trabajo-planeando.webp')"
 							alt="Politicas de Devolución"
 							ratio="4by1"
 							></b-image>

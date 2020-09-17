@@ -4,7 +4,7 @@
 			<div class="columns has-text-centered is-centered">
 				<div class="column is-6-desktop">
 					<b-image
-					src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Ferror404.png?alt=media&token=f5386bde-7d21-4e96-811c-af99c02764b0"
+					:src="require('../assets/img/error404.webp')"
 					placeholder="/static/img/icons/favicon-32x32.png"
 					
 					id="error404"

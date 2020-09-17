@@ -23,7 +23,7 @@
 						<a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank">
 							<figure class="image is-200x200 m-auto">
 								<b-image
-								src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/bienvenida%2Fplataforma-web.png?alt=media&token=ae89d0f4-b30d-40e2-83fc-19ea45b768fa"
+								:src="require('../assets/img/bienvenida/plataforma-web.webp')"
 								alt="A random image"
 								:rounded="true"
 								></b-image>
@@ -36,7 +36,7 @@
 						<a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank"> 
 							<figure class="image is-200x200 m-auto">
 								<b-image
-								src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/bienvenida%2Fplataforma-colaboradores.png?alt=media&token=16805621-3867-4cf9-911a-2252d5e6c48e"
+								:src="require('../assets/img/bienvenida/plataforma-colaboradores.webp')"
 								alt="A random image"
 								:rounded="true"
 								></b-image>
@@ -49,7 +49,7 @@
 						<a href="/pqrs" target="_blank">
 							<figure class="image is-200x200 m-auto">
 								<b-image
-								src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/bienvenida%2Fpqrs.png?alt=media&token=61705326-022f-4815-8ec9-74f0a858d063"
+								:src="require('../assets/img/bienvenida/pqrs.webp')"
 								alt="A random image"
 								:rounded="true"
 								></b-image> 
@@ -98,7 +98,7 @@
 						</button>
 						</div>
 						<b-image
-						:src="json.about"
+						:src="require('../assets/img/bienvenida/Sobre-nosotros.webp')"
 						ratio="4by3"
 						></b-image>	
 					</div>
@@ -118,7 +118,7 @@
 				
 				<div class="columns is-multiline">
 					<div class="column is-6-tablet is-3-desktop is-12-mobile" v-for="(service) in json.services">
-						<div class="card is-shady">
+						<div class="card">
 							<div class="card-image">
 								<b-image
 								  :src="service.imagen"

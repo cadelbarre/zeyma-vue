@@ -3,20 +3,11 @@
     /*font-size: 14px;*/
     background: #F0F2F4;
 }
-
-/*.navbar.is-white {
-  background: #F0F2F4;
-}
-.navbar-brand .brand-text {
-  font-size: 1.11rem;
-  font-weight: bold;
-}*/
 .text-shadow{
     text-shadow: 2px 2px rgba(0,0,0,0.2);
 }
 
 .hero-body#hero__blog {
-    /*background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Plum_trees_Kitano_Tenmangu.jpg/1200px-Plum_trees_Kitano_Tenmangu.jpg);*/
     background-position: center !important;
     background-size: cover  !important;
     background-repeat: no-repeat !important;
@@ -50,9 +41,9 @@
     margin-bottom: 1rem;
 }
 
-.media-content {
+/*.media-content {
     margin-top: 3rem;
-}
+}*/
 
 .article,
 .promo-block {

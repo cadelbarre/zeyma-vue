@@ -13,7 +13,7 @@
 			<div class="columns features">
 
 				<div class="column is-6 is-6-tablet is-offset-1">
-					<div class="card is-shady">
+					<div class="card is-shady" v-for="(post, index) in posts">
 						<div class="card-image">
 							<figure class="image is-2by1">
 								<img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
@@ -21,41 +21,25 @@
 						</div>
 						<div class="card-content">
 							<div class="content">
-								<h3><a href="">No más cursos gratuitos en Udemy de más de 2 horas.</a></h3>
+								<h3><a :href="'blog/'+post.title.replace(/ /g, '-')" target="_blank">{{post.title}}</a></h3>
 								<div class="tags has-addons">
-									<span class="tag is-rounded is-info">Carlos Delbarre</span>
-									<span class="tag is-rounded">Sept 28, 2020 - Actualidad</span>
+									<span class="tag is-rounded is-info">{{post.user}}</span>
+									<span class="tag is-rounded">{{post.date}} - {{post.category}}</span>
 								</div>
-								<p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, iusto, cum. Sapiente cumque id nostrum obcaecati laudantium ex numquam eos, iste adipisci harum quibusdam impedit repudiandae, natus, eveniet labore quasi.</p>
-								<b-button type="btn-primary">Seguir leyendo</b-button>
+								<p>{{post.abstract}}</p>
+								<b-button type="btn-primary"
+								tag="router-link"
+								:to="{ name: 'Blog', params: { year: post.title.replace(/ /g, '-') }}">Seguir leyendo</b-button>
 							</div>
 						</div>
 					</div>
 
-					<div class="card is-shady">
-						<div class="card-image">
-							<figure class="image is-2by1">
-								<img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="content">
-								<h3><a href="">No más cursos gratuitos en Udemy de más de 2 horas.</a></h3>
-								<div class="tags has-addons">
-									<span class="tag is-rounded is-info">Carlos Delbarre</span>
-									<span class="tag is-rounded">Sept 28, 2020 - Actualidad</span>
-								</div>
-								<p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, iusto, cum. Sapiente cumque id nostrum obcaecati laudantium ex numquam eos, iste adipisci harum quibusdam impedit repudiandae, natus, eveniet labore quasi.</p>
-								<b-button type="btn-primary">Seguir leyendo</b-button>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="column is-4 is-5-tablet  px-6">
 					<h2 class="subtitle is-4">Entradas Recientes</h2>
 					
-					<article class="media">
+					<article class="media" v-for="(post, index) in posts">
 						<div class="media-left">
 							<figure class="image is-64x64">
 								<img src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fvista-superior-companeros-trabajo-planeando-estrategia_1098-2959.jpg?alt=media&token=75a0268d-4aa6-43c6-9ab8-087f402be9a3" alt="Image">
@@ -64,31 +48,14 @@
 						<div class="media-content">
 							<div class="content">
 								<p>
-									<strong>No más cursos gratuitos en Udemy de más de 2 horas.</strong><br>
-									<small>Sept 28, 2020</small>
+									<strong><a :href="'blog/'+post.title.replace(/ /g, '-')">{{post.title}}</a></strong><br>
+									<small>{{post.date}}</small>
 									<br>
 								</p>
 							</div>
 						</div>
 					</article>
 
-						<article class="media">
-						<div class="media-left">
-							<figure class="image is-64x64">
-								<img src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fvista-superior-companeros-trabajo-planeando-estrategia_1098-2959.jpg?alt=media&token=75a0268d-4aa6-43c6-9ab8-087f402be9a3" alt="Image">
-							</figure>
-						</div>
-						<div class="media-content">
-							<div class="content">
-								<p>
-									<strong>No más cursos gratuitos en Udemy de más de 2 horas.</strong><br>
-									<small>Sept 28, 2020</small>
-									<br>
-								</p>
-							</div>
-						</div>
-					</article>
-					
 				</div>
 
 			</div>
@@ -97,12 +64,44 @@
 </template>
 
 <script>
+import Firebase from 'firebase';
+import "firebase/firestore";
+import Config from '@/config/config';
+
+
 export default {
-  name: 'Publicaciones'
+  name: 'Publicaciones',
+  data(){
+  	return{
+  		Firebase,
+  		posts:[]
+  	}
+  },
+  created(){
+  	/*--------------  Obtener articulos del blog Real DataBase  --------------*/
+  	if (!Firebase.apps.length) {
+  		Firebase.initializeApp(Config);
+  	}
+  	
+  	let real = Firebase.database();
+  	let pruebass = real.ref('post').orderByChild("filtro");
+
+  	let dataBlog = pruebass.on("child_added", (snapshot) => {
+  		this.posts.push(snapshot.val());
+  	})
+
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('../assets/css/publicaciones.css');
+a{
+	color: #363636;
+}
+
+a:hover{
+	color: #035aa6;
+}
 </style>
