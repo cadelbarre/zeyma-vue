@@ -148,7 +148,7 @@ export default {
     let db = Firebase.storage();
     let storageRef = db.ref();
 
-    /*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
+    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
     // Create a reference under which you want to list
     var listRef = storageRef.child('proveedores');
     this.img = [];

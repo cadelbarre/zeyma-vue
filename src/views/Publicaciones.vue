@@ -16,7 +16,7 @@
 					<div class="card is-shady" v-for="(post, index) in posts">
 						<div class="card-image">
 							<figure class="image is-2by1">
-								<img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+								<img :src="post.url" alt="Placeholder image" class="modal-button" data-target="modal-image2">
 							</figure>
 						</div>
 						<div class="card-content">
@@ -42,7 +42,7 @@
 					<article class="media" v-for="(post, index) in posts">
 						<div class="media-left">
 							<figure class="image is-64x64">
-								<img src="https://firebasestorage.googleapis.com/v0/b/zeymaweb.appspot.com/o/front_img%2Fvista-superior-companeros-trabajo-planeando-estrategia_1098-2959.jpg?alt=media&token=75a0268d-4aa6-43c6-9ab8-087f402be9a3" alt="Image">
+								<img :src="post.url" alt="Image">
 							</figure>
 						</div>
 						<div class="media-content">

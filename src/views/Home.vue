@@ -229,12 +229,12 @@
 						<div class="card is-shady">
 							<div class="card-image">
 								<figure class="image is-4by3">
-									<img :src="blog.imagen" data-target="modal-image2">
+									<img :src="blog.url" data-target="modal-image2">
 								</figure>
 							</div>
 							<div class="card-content">
 								<div class="content">
-									<h3><a href="/blog/0">{{blog.title}}</a></h3>
+									<h3><a :href="/blog/+blog.title.replace(/ /g, '-')">{{blog.title}}</a></h3>
 									<div class="tags has-addons">
 									    <span class="tag is-rounded btn-primary">{{blog.user}}</span>
 									    <span class="tag is-rounded"><a href="">{{blog.date}}</a></span>
@@ -368,7 +368,7 @@ export default {
 
     /*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let pruebass = real.ref('post').orderByChild("filtro").limitToFirst(3);
+    let pruebass = real.ref('post').orderByChild("filtro").limitToFirst(1);
 
     let dataBlog = pruebass.on("child_added", (snapshot) => {
     	this.blogs.push(snapshot.val());

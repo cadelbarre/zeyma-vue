@@ -63,7 +63,7 @@ export default {
     }
   },
   created(){
-
+  	
   	if (!Firebase.apps.length) {
   		Firebase.initializeApp(Config);
   	}
@@ -73,7 +73,7 @@ export default {
     let dataBlog = real.ref('post/' + this.year).on('value', snapshot => {
     	this.articule = snapshot.val()
     	// console.log(this.articule);
-    	// this.img = "background-image: url(" + this.articule.imagen + ");"
+    	this.img = "background-image: url(" + this.articule.url + ");"
 
     })
   }
