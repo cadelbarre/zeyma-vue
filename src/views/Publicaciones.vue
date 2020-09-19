@@ -49,7 +49,7 @@
 							<div class="content">
 								<p>
 									<strong><a :href="'blog/'+post.title.replace(/ /g, '-')">{{post.title}}</a></strong><br>
-									<small>{{post.date}}</small>
+									<small>{{post.date}} - {{post.category}}</small>
 									<br>
 								</p>
 							</div>
@@ -99,6 +99,7 @@ export default {
 @import url('../assets/css/publicaciones.css');
 a{
 	color: #363636;
+	transition: all 0.2s ease;
 }
 
 a:hover{

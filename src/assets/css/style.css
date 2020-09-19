@@ -145,6 +145,21 @@ textarea:focus {
     background-size: cover;
 }
 
+    /* los dots del carousel */
+.carousel-arrow .icon{
+    color: var(--color-primary) !important;
+}
+
+.carousel .carousel-indicator .indicator-item.is-active .indicator-style, .carousel .carousel-indicator .indicator-item .indicator-style:hover{
+    background-color: var(--color-primary) !important;
+
+}
+
+.carousel .carousel-indicator.is-inside.is-bottom {
+    bottom: -2em !important;
+}
+    /* fin del Carousel */
+
 .navbar-item img {
     max-height: 6em !important;
 }
@@ -157,16 +172,11 @@ img#slider {
     width: 100vw !important;
 }
 
-#Carousel .VueCarousel-wrapper {
-    margin-bottom: -20px !important;
-    min-height: 600px;
+.carousel {
+    min-height: 400px !important;
     background: url('../img/tenorLow.gif');
     background-position: center;
     background-repeat: no-repeat;
-}
-
-#Carousel .VueCarousel-pagination {
-    height: 0px !important;
 }
 
 /*--------------  Navbar  --------------*/
@@ -399,6 +409,10 @@ table th {
         font-size: 13px !important;
     }
 
+    #welcome_links{
+        margin-top: 0px !important;
+    }
+
     #info_navbar_mobile {
         display: inline;
     }
@@ -422,8 +436,8 @@ table th {
         padding: 5px !important;
     }
 
-    #Carousel .VueCarousel-wrapper {
-        min-height: 100%;
+    .carousel {
+        min-height: 100% !important;
         background: url('../img/tenorMobile.gif');
         background-position: center;
         background-repeat: no-repeat;
@@ -439,7 +453,7 @@ table th {
     }
 
     .title.is-1 {
-        font-size: 2.3em !important;
+        font-size: 2em !important;
     }
 
     .subtitle {

@@ -1,14 +1,22 @@
 <template>
 	<section>
 		<!-- Slides -->
-		 <carousel :autoplay="true" :autoplayTimeout="3000" :scrollPerPage="false" :perPageCustom="[[768, 1], [200, 1]]" :loop="true" :paginationActiveColor="'#999999'" :navigationEnabled="true" id="Carousel">
-		   <slide v-for="value in img.slides">
-		     <b-image
-		     :src="value" id="slider"
-		     ratio="16by9"
-		     ></b-image>
-		   </slide>
-		 </carousel>
+
+		 <b-carousel icon-pack="fa"
+            icon-prev="angle-left"
+            icon-next="angle-right"
+            icon-size="is-medium"
+            >
+		 	<b-carousel-item v-for="value in img.slides">
+		 		<b-image
+		 		placeholder="/static/img/icons/favicon-32x32.png"
+		 		:src="value"
+		 		alt="The Buefy Logo"
+		 		ratio="16by9"
+		 		></b-image>
+		 	</b-carousel-item>
+		 </b-carousel>
+
 
 		<!-- Bienvenida -->
 		<div class="section is-medium has-shadow">
@@ -18,7 +26,7 @@
 						<h1 class="title is-1 is-uppercase">Bienvenidos a <br>Comercializadora ZEYMA S.A.S</h1>
 					</div>
 				</div>
-				<div class="columns mt-6 is-variable is-5">
+				<div class="columns mt-6 is-variable is-5" id="welcome_links">
 					<div class="column is-4-tablet">
 						<a href="http://plataformazeyma.com/adminlogin.aspx" target="_blank">
 							<figure class="image is-200x200 m-auto">
@@ -234,10 +242,10 @@
 							</div>
 							<div class="card-content">
 								<div class="content">
-									<h3><a :href="/blog/+blog.title.replace(/ /g, '-')">{{blog.title}}</a></h3>
+									<h3><a id="blog_title" :href="/blog/+blog.title.replace(/ /g, '-')">{{blog.title}}</a></h3>
 									<div class="tags has-addons">
 									    <span class="tag is-rounded btn-primary">{{blog.user}}</span>
-									    <span class="tag is-rounded"><a href="">{{blog.date}}</a></span>
+									    <span class="tag is-rounded">{{blog.date}}</span>
 									</div>
 									<p class="has-text-justified">{{blog.abstract}}</p>
 									<b-button 
@@ -299,7 +307,6 @@ export default {
   	};
   },
   created(){
-
   	if (!Firebase.apps.length) {
   		Firebase.initializeApp(Config);
   	}
@@ -368,7 +375,7 @@ export default {
 
     /*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();
-    let pruebass = real.ref('post').orderByChild("filtro").limitToFirst(1);
+    let pruebass = real.ref('post').orderByChild("filtro").limitToFirst(3);
 
     let dataBlog = pruebass.on("child_added", (snapshot) => {
     	this.blogs.push(snapshot.val());
@@ -393,6 +400,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+a#blog_title{
+	color: #363636;
+	transition: all 0.2s ease;
+}
+
+a#blog_title:hover{
+	color: #035aa6;
+}
+
 .is-shady {
 	animation: flyintoright .4s backwards;
 	background: #fff;
