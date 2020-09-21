@@ -21,7 +21,8 @@
 						</div>
 						<div class="card-content">
 							<div class="content">
-								<h3><a :href="'blog/'+post.title.replace(/ /g, '-')" target="_blank">{{post.title}}</a></h3>
+								<h3><router-link :to="'blog/'+post.title.replace(/ /g, '-')">{{post.title}}</router-link>
+									</h3>
 								<div class="tags has-addons">
 									<span class="tag is-rounded is-info">{{post.user}}</span>
 									<span class="tag is-rounded">{{post.date}} - {{post.category}}</span>
@@ -48,7 +49,9 @@
 						<div class="media-content">
 							<div class="content">
 								<p>
-									<strong><a :href="'blog/'+post.title.replace(/ /g, '-')">{{post.title}}</a></strong><br>
+									<strong>
+										<router-link :to="'blog/'+post.title.replace(/ /g, '-')">{{post.title}}</router-link>
+									</strong><br>
 									<small>{{post.date}} - {{post.category}}</small>
 									<br>
 								</p>

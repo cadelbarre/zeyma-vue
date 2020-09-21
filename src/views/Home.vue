@@ -54,7 +54,7 @@
 						<p class="has-text-justified mt-3">Buscamos integrar todo nuestro sistema ERP con cada uno de nuestros colaboradores para poder tener onicanalidad. </p>
 					</div>
 					<div class="column is-4-tablet">
-						<a href="/pqrs" target="_blank">
+						<router-link to="/pqrs">	
 							<figure class="image is-200x200 m-auto">
 								<b-image
 								:src="require('../assets/img/bienvenida/pqrs.webp')"
@@ -63,7 +63,7 @@
 								></b-image> 
 							</figure>
 							<h1 class="is-uppercase is-size-4 has-text-weight-bold has-text-centered mt-4 text-primary">pqrs</h1>
-						</a> 
+						</router-link>
 						<p class="has-text-justified mt-3">Nuestros canales estan abiertos para recibir todas sus peticiones, quejas, reclamos y sugerencias.</p>
 					</div>
 
@@ -242,7 +242,8 @@
 							</div>
 							<div class="card-content">
 								<div class="content">
-									<h3><a id="blog_title" :href="/blog/+blog.title.replace(/ /g, '-')">{{blog.title}}</a></h3>
+									<h3><router-link id="blog_title" :to="/blog/+blog.title.replace(/ /g, '-')">{{blog.title}}</router-link>
+										</h3>
 									<div class="tags has-addons">
 									    <span class="tag is-rounded btn-primary">{{blog.user}}</span>
 									    <span class="tag is-rounded">{{blog.date}}</span>

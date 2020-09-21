@@ -20,22 +20,26 @@
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="/politicas_devolucion">Politicas de devolución</a></li>
+						</b-icon><router-link to="/politicas_devolucion">Politicas de devolución</router-link>
+						</li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="/preguntas_frecuentes">Envios y Pedidos</a></li>
+						</b-icon><router-link to="/preguntas_frecuentes">Envios y Pedidos</router-link>
+						</li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="/pqrs">PQRS</a></li>
+						</b-icon><router-link to="/pqrs">PQRS</router-link>
+					</li>
 						<li><b-icon
 							pack="fas"
 							icon="angle-right"
 							size="is-small">
-						</b-icon><a href="/escribenos">Escribenos</a></li>
+						</b-icon><router-link to="/escribenos">Escribenos</router-link>
+					</li>
 					</ul>
 				</div>
 				<div class="column">
