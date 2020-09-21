@@ -53,8 +53,8 @@
 				<div class="columns">
 					<div class="column is-10 m-auto">
 						<b-notification type="is-warning has-text-centered" aria-close-label="Close notification">
-							<em>Recuerde siempre pedir a nuestros representante de ventas ó telefonistas el recibo correspondiente al pago de la factura que va a realizar. Ese documento es el único soporte que tiene uds para demostrar la cancelación de sus facturas. <br><br>
-							<strong>Para más información comuníquese con nosotros en la línea de atención al {{json.telefono}} ext 101 102 y 103 o al correo: {{json.correo1}}.</strong></em>
+							<em>Recuerde siempre pedir a nuestros representantes de ventas ó telefonistas el recibo correspondiente al pago de la(s) factura(s) a cancelar. Ese documento es el único soporte que tiene usted, para demostrar la cancelación de su(s) factura(s). <br><br>
+							<strong>Para más información comuníquese con nosotros en la línea de atención al {{json.telefono}} Ext 101 102 y 103 o al correo: {{json.correo1}}.</strong></em>
 						</b-notification>
 					</div>
 				</div>
@@ -80,15 +80,15 @@ export default {
         	},
         	{
         		title: '¿ Cuál es el horario de atención ?',
-        		text: 'Nuestro horario de atención es de Lunes a Viernes de 7:30 am a 12:00 m y de 2:00 pm a 6:00 pm – Sábados de 7:30 a 12:00 m'
+        		text: 'Nuestro horario de atención es de Lunes a Viernes de 7:30 am a 12:00 m y de 1:30 pm a 5:30 pm – Sábados de 7:30 a 12:00 m'
         	},
         	{
         		title: '¿ Quienes son los autorizados en entregar los pedidos ?',
-        		text: '<b>Comercializadora ZEYMA SAS</b> despacha todos los pedidos en su bodega principal situada en la ciudad de Barranquilla y son entregados por el personal calificado y debidamente identificados, en transportes propios de la empresa. Los pedidos que se encuentren fuera de la costa atlantica seran entregados por servicios de logistica de confianza como Chevalier, Coordinadora, entre otros.'
+        		text: '<b>Comercializadora ZEYMA SAS</b> despacha todos los pedidos en su bodega principal situada en la ciudad de Barranquilla y son entregados por el personal calificado y debidamente identificados, en transportes propios de la empresa. <br><br> Los pedidos que se encuentren fuera de la costa atlantica seran entregados por servicios de logistica de confianza como Envia, Coordinadora, entre otros, los cuales poseen un sistema de rastreo de pedidos para saber la ubicación de su pedido.'
         	},
         	{
         		title: '¿ Como realizo una devolución de mercancia ?',
-        		text: 'Si tienes alguna mercancia que haya sido vendida por nosotros y deseas realizar una devolución por vencimiento o por mal estado, te recomendamos visitar la pagina sobre nuestras <a href="/politicas_devolucion">Políticas de Devolución.</a>'
+        		text: 'Si tienes alguna mercancia que haya sido vendida por nosotros y deseas realizar una devolución por vencimiento o por mal estado, te recomendamos visitar la pagina sobre nuestras <a href="/politicas_devolucion" target="_blank">Políticas de Devolución.</a> <router-link :to="/politicas_devolucion"></router-link>'
         	},
         	{
         		title: '¿ Cual es el costo de envio de cada pedido ?',
@@ -96,7 +96,7 @@ export default {
         	},
         	{
         		title: '¿ A través de que medios puedo cancelar mis facturas ?',
-        		text: '<strong>Pago en efectivo:</strong> Es el medio de pago preferido por los droguistas. Se le informará con anterioridad el total por cancelar, el pago se ingresara a nuestro sistema el mismo día.<br> <strong>Cheques pos-fechados:</strong> Ademas de poder realizar los pagos en efectivos, podrán cancelar con cheques pos-fechados a la fecha. Solo cuando se haga efectivo el pago, se ingresar el pago correspondiente a nuestro sistema.'
+        		text: '<strong>Pago en efectivo:</strong> Es el medio de pago preferido por los droguistas. Se le informará con anterioridad el total por cancelar, el pago se ingresara a nuestro sistema el mismo día.<br> <strong>Transferencias Bancarias:</strong> Comercializadora ZEYMA SAS acepta transferencias bancarias ó consignaciones a las siguientes entidades: <ul><li>Banco Colpatria - 7431009107 - Cuenta Corriente</li><li>Banco Agrario - 3-1601-0-00326-7 - Cuenta Corriente</li><li>Banco de Bogota - 387080815 - Cuenta Corriente</li><li>Bancolombia - 957-993274-15 - Cuenta Ahorro</li></ul> <b><i> Agradecemos enviarnos por correo electrónico ó por whatsapp el soporte para cancelación de la(s) factura(s).</b></i> '
         	}
         	]
         }
