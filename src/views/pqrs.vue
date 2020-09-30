@@ -12,7 +12,7 @@
 		<div class="section is-medium has-background-light">
 			<div class="container">
 				<div class="box">
-					<h1 class="title has-text-centered">Formulario de Peticiones, Quejas, Reclamos, Sugerencias ó Agradecimientos</h1>
+					<h1 class="title has-text-centered p-20">Formulario de Peticiones, Quejas, Reclamos, Sugerencias ó Agradecimientos</h1>
 					<b-field grouped>
 						<b-field label="Nombre o Razón Social" expanded>
 							<b-input maxlength="50" v-model="nombre"></b-input>

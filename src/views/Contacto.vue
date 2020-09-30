@@ -63,7 +63,7 @@
       </div>
     </div>
   </div>
-  <div class="columns">
+  <div class="columns has-background-grey-lighter">
     <iframe class="contacto__img"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.3123319822715!2d-74.79988657080015!3d10.944529299512988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef5d2b9e6ff81a7%3A0xcd1827beeb1e42e6!2sCra.%207f%20%234452%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1589638730302!5m2!1ses!2sco"
       width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
