@@ -8,7 +8,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
   },
   {
     path: '/about',
@@ -19,39 +19,60 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/quienes-somos',
+    redirect: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
     path: '/talento_humano',
     name: 'Talento',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Talentohumano.vue')
+    component: () => import(/* webpackChunkName: "Talento_humano" */ '../views/Talentohumano.vue')
   },
   {
     path: '/politicas_devolucion',
     name: 'Devolucion',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Devolucion.vue')
+    component: () => import(/* webpackChunkName: "devolucion" */ '../views/Devolucion.vue')
   },
   {
     path: '/preguntas_frecuentes',
     name: 'Frecuentes',
-    component: () => import(/* webpackChunkName: "about" */ '../views/preguntasfrecuentes.vue')
+    component: () => import(/* webpackChunkName: "preguntas_frecuentes" */ '../views/preguntasfrecuentes.vue')
   },
   {
     path: '/publicaciones',
     name: 'Publicaciones',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Publicaciones.vue')
+    component: () => import(/* webpackChunkName: "publicaciones" */ '../views/Publicaciones.vue')
   },
   {
     path: '/escribenos',
     name: 'Contacto',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Contacto.vue')
+    component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
+  },
+   {
+    path: '/contactanos',
+    redirect: '/escribenos',
+    name: 'Contacto',
+    component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
+  },
+   {
+    path: '/contacto',
+    redirect: '/escribenos',
+    name: 'Contacto',
+    component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
   },
   {
     path: '/directorio',
     name: 'Directorio',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Directorio.vue')
+    component: () => import(/* webpackChunkName: "directorio" */ '../views/Directorio.vue')
   },
    {
     path: '/pqrs',
     name: 'pqrs',
-    component: () => import(/* webpackChunkName: "about" */ '../views/pqrs.vue')
+    component: () => import(/* webpackChunkName: "pqrs" */ '../views/pqrs.vue')
   },
   {
     path: '/prueba',
@@ -62,13 +83,18 @@ Vue.use(VueRouter)
     path: '/blog/:year',
     name: 'Blog',
     // component: require('../views/Blog.vue'),
-    component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue'),
+    component: () => import(/* webpackChunkName: "Blog" */ '../views/Blog.vue'),
     props: true
   },
+  //  {
+  //   path: '*',
+  //   name: 'Error404',
+  //   component: () => import(/* webpackChunkName: "Error" */ '../views/Error404.vue')
+  // },
    {
     path: '/*',
     name: 'Error404',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Error404.vue')
+    component: () => import(/* webpackChunkName: "Error" */ '../views/Error404.vue')
   },
 ]
 
