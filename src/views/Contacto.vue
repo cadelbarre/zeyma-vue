@@ -23,6 +23,7 @@
             <h1 class="is-size-4 has-text-weight-medium text-primary mb-3">Información General</h1>
             <p>{{json.descripcion}} <br>
               {{json.direccion}}<br>
+              {{json.ciudad}}<br>
               Telefono: {{json.telefono}}<br>
               Celular: {{json.celular}} <br>
               Correo: <span class="text-primary has-text-weight-medium">{{json.correo1}} - {{json.correo2}}</span>
@@ -30,7 +31,7 @@
           </div>
           <div>
             <h1 class="is-size-4 has-text-weight-medium text-primary mb-3 mt-6">Horario de Atención</h1>
-            <p>{{json.horario_corto}}<br>{{json.horario_finsemana}}</p>
+            <p>Lunes - Viernes:<br>{{json.horario_corto}} - {{json.horario_corto_tarde}}<br>Sabado:<br>{{json.horario_finsemana}}</p>
           </div>
         </div>
         <div class="column is-8">

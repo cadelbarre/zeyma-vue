@@ -90,9 +90,9 @@
 
   <!-- Proveedores -->
   <div class="section">
-    <carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :autoplayHoverPause="true" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true">
-      <slide v-for="value in img" >
-        <img :src="value">
+    <carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :autoplayHoverPause="false" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true">
+      <slide v-for="value in vendors" >
+        <img :src="require('../assets/img/logo-proveedores/'+value+'.png')">
       </slide>
     </carousel>
   </div>
@@ -105,6 +105,7 @@
 import Firebase from 'firebase';
 import "firebase/firestore";
 import Config from '@/config/config';
+import { vendors } from '@/config/proveedores'
 
 // @ is an alias to /src
 import json from '@/assets/data/data-general.json';
@@ -119,6 +120,7 @@ export default {
     return {
       count: 0,
       img: [],
+      vendors,
       Firebase,
       position: 0,
       json,
@@ -141,44 +143,7 @@ export default {
    });
   },
   created(){
-
-    if (!Firebase.apps.length) {
-       Firebase.initializeApp(Config);
-    }
-    let db = Firebase.storage();
-    let storageRef = db.ref();
-
-    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
-    // Create a reference under which you want to list
-    var listRef = storageRef.child('proveedores');
-    this.img = [];
-    var imgArray = this.img;
-
-    // Find all the prefixes and items.
-    listRef.listAll().then(function(res) {
-      res.prefixes.forEach(function(folderRef) {
-        console.log('1. ' + folderRef)
-        // All the prefixes under listRef.
-        // You may call listAll() recursively on them.
-      });
-      res.items.forEach(function(itemRef) {
-
-          let storeRef = db.ref(itemRef.fullPath);
-          storeRef.getDownloadURL().then(function(url) {
-          // inserted into an variable.
-          imgArray.push(url)
-          }).catch(function(error) {
-          // Handle any errors
-          });
-
-      });
-
-    }).catch(function(error) {
-      console.log('error: '+ error)
-    });
-
   },
-
   methods: {
     onReady: function(instance, CountUp) {
         const that = this;

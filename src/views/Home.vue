@@ -12,7 +12,7 @@
 		 		placeholder="/static/img/icons/favicon-32x32.png"
 		 		:src="value"
 		 		alt="The Buefy Logo"
-		 		ratio="16by9"
+		 		ratio="3by1"
 		 		></b-image>
 		 	</b-carousel-item>
 		 </b-carousel>
@@ -215,9 +215,9 @@
 
 		<!-- Proveedores -->
 		<div class="section">
-			<carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true" :autoplayHoverPause="true">
-			  <slide v-for="value in img.logos" >
-			    <img :src="value">
+			<carousel :autoplay="true" :autoplayTimeout="1500" :scrollPerPage="false" :paginationEnabled="false" :perPageCustom="[[768, 3], [1024, 6]]" :loop="true" :autoplayHoverPause="false">
+			  <slide v-for="value in vendors" >
+			    <img :src="require('../assets/img/logo-proveedores/'+value+'.png')">
 			  </slide>
 			</carousel>
 		</div>
@@ -228,7 +228,7 @@
 				<div class="columns">
 					<div class="column is-12 mb-6 has-text-centered">
 						<h1 class="title is-1">Publicaciones</h1>
-						<p class="p-20">A continuación podrá encontrar algunos de los servicios que ofrecemos en Comcercializadora ZEYMA SAS</p>
+						<p class="p-20">Conozca las ultimas novedades y noticias relacionadas con el sector farmacéutico.</p>
 					</div>
 				</div>
 				<div class="columns">
@@ -271,6 +271,7 @@
 import Firebase from 'firebase';
 import "firebase/firestore";
 import Config from '@/config/config';
+import { vendors } from '@/config/proveedores'
 
 // @ is an alias to /src
 import json from '@/assets/data/data-general.json';
@@ -288,9 +289,9 @@ export default {
   		blogs : [],
   		count: 0,
   		json,
+  		vendors,
   		img: {
-  			slides:[],
-  			logos: [],
+  			slides:[]
   		},
   		Firebase,
   		position: 0,
@@ -315,64 +316,74 @@ export default {
     let db = Firebase.storage();
     let storageRef = db.ref();
 
-    /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
-    // Create a reference under which you want to list
-    var listRef = storageRef.child('proveedores');
-    this.img.logos = [];
+    const urlSlides = async () => {
+
+	    /*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
+	    // Create a reference under which you want to list
+	    var listSlidesRef = storageRef.child('slides');
+	    this.img.slides = [];
+	    var imgArray = this.img;
+
+	    // Find all the prefixes and items.
+	   await listSlidesRef.listAll().then(function(res) {
+	      res.prefixes.forEach(function(folderRef) {
+	        console.log('1. ' + folderRef)
+	        // All the prefixes under listRef.
+	        // You may call listAll() recursively on them.
+	      });
+	      res.items.forEach(function(itemRef) {
+	      
+	          let storeRef = db.ref(itemRef.fullPath);
+	          storeRef.getDownloadURL().then(function(url) {
+	          // inserted into an variable.
+	          imgArray.slides.push(url)
+	          }).catch(function(error) {
+	          // Handle any errors
+	          });
+	        
+	      });
+	      
+	    }).catch(function(error) {
+	      console.log('error: '+ error)
+	    });
+    }
+
+    // const urlProveedores = async () => {
+    	
+	   //  /*--------------  Obtener URL de cada imagen de la carpeta 'proveedores'  --------------*/
+	   //  // Create a reference under which you want to list
+	   //  var listRef = storageRef.child('proveedores');
+	   //  this.img.logos = [];
+	    
+	   //  var imgArray = this.img;
+
+	   //  // Find all the prefixes and items.
+	   //  await listRef.listAll().then(function(res) {
+	   //    res.prefixes.forEach(function(folderRef) {
+	   //      console.log('1. ' + folderRef)
+	   //      // All the prefixes under listRef.
+	   //      // You may call listAll() recursively on them.
+	   //    });
+	   //    res.items.forEach(function(itemRef) {
+	      
+	   //        let storeRef = db.ref(itemRef.fullPath);
+	   //        storeRef.getDownloadURL().then(function(url) {
+	   //        // inserted into an variable.
+	   //        imgArray.logos.push(url)
+	   //        }).catch(function(error) {
+	   //        console.log(error)
+	   //        });
+	        
+	   //    });
+	      
+	   //  }).catch(function(error) {
+	   //    console.log('error: '+ error)
+	   //  });
+    // }
     
-    var imgArray = this.img;
 
-    // Find all the prefixes and items.
-    listRef.listAll().then(function(res) {
-      res.prefixes.forEach(function(folderRef) {
-        console.log('1. ' + folderRef)
-        // All the prefixes under listRef.
-        // You may call listAll() recursively on them.
-      });
-      res.items.forEach(function(itemRef) {
-      
-          let storeRef = db.ref(itemRef.fullPath);
-          storeRef.getDownloadURL().then(function(url) {
-          // inserted into an variable.
-          imgArray.logos.push(url)
-          }).catch(function(error) {
-          console.log(error)
-          });
-        
-      });
-      
-    }).catch(function(error) {
-      console.log('error: '+ error)
-    });
-
-    /*--------------  Obtener URL de cada imagen de la carpeta 'slides'  --------------*/
-    // Create a reference under which you want to list
-    var listSlidesRef = storageRef.child('slides');
-    this.img.slides = [];
-    var imgArray = this.img;
-
-    // Find all the prefixes and items.
-    listSlidesRef.listAll().then(function(res) {
-      res.prefixes.forEach(function(folderRef) {
-        console.log('1. ' + folderRef)
-        // All the prefixes under listRef.
-        // You may call listAll() recursively on them.
-      });
-      res.items.forEach(function(itemRef) {
-      
-          let storeRef = db.ref(itemRef.fullPath);
-          storeRef.getDownloadURL().then(function(url) {
-          // inserted into an variable.
-          imgArray.slides.push(url)
-          }).catch(function(error) {
-          // Handle any errors
-          });
-        
-      });
-      
-    }).catch(function(error) {
-      console.log('error: '+ error)
-    });
+    urlSlides();
+    // urlProveedores();
 
     /*--------------  Obtener articulos del blog Real DataBase  --------------*/
     let real = Firebase.database();

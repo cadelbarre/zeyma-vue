@@ -43,11 +43,11 @@
 			</div>	
 		</div>
 		<!-- Navbar -->
-		<div class="container is-centered py-2">
+		<div class="container is-centered">
 			<b-navbar>
 				<template slot="brand">
 					<b-navbar-item tag="router-link" :to="{ path: '/' }">
-						<img src="../assets/img/zeyma-Original-mod.webp">
+						<img src="../assets/img/zeyma-Original-mod.png">
 					</b-navbar-item>
 				</template>
 				<template slot="end">

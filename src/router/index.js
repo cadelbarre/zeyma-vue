@@ -10,6 +10,7 @@ Vue.use(VueRouter)
     name: 'Home',
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
   },
+  // todas las direcciones posibles para el about
   {
     path: '/about',
     name: 'About',
@@ -19,9 +20,18 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/page/2',
+    redirect: '/about',
+    name: 'Page_quienes_somos',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
     path: '/quienes-somos',
     redirect: '/about',
-    name: 'About',
+    name: 'Quienes_somos',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -47,15 +57,16 @@ Vue.use(VueRouter)
     name: 'Publicaciones',
     component: () => import(/* webpackChunkName: "publicaciones" */ '../views/Publicaciones.vue')
   },
+  // Todas las direcciones de contactanos
   {
     path: '/escribenos',
-    name: 'Contacto',
+    name: 'Escribenos',
     component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
   },
    {
     path: '/contactanos',
     redirect: '/escribenos',
-    name: 'Contacto',
+    name: 'Contactanos',
     component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
   },
    {
@@ -64,6 +75,7 @@ Vue.use(VueRouter)
     name: 'Contacto',
     component: () => import(/* webpackChunkName: "contacto" */ '../views/Contacto.vue')
   },
+   // Fin direcciones de contactanos
   {
     path: '/directorio',
     name: 'Directorio',
